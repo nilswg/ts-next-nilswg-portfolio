@@ -1,0 +1,10 @@
+@layer components {
+  .blob-mask {
+    mask-image: url('/img/blob.svg');
+    // -webkit-mask-image: url("/img/blob.svg");
+    mask-repeat: no-repeat;
+    // -webkit-mask-repeat: no-repeat;
+    mask-position: center center;
+    // -webkit-mask-position: center center;
+  }
+}

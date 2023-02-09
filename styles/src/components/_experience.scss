@@ -1,0 +1,45 @@
+@layer components {
+  #timeline .experience-box {
+    @apply mr-[0.5rem] max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl block cursor-pointer rounded-sm border-2 border-sky-800 py-4 md:mr-[1.2rem];
+
+    &::before {
+      @apply pointer-events-none absolute top-[50%] right-[100%] -mt-[0.75rem] border-[0.75rem] border-transparent border-r-sky-800 content-[''];
+    }
+
+    &::after {
+      @apply pointer-events-none absolute top-[50%] right-[calc(100%-3px)] -mt-[0.75rem] border-[0.75rem] border-transparent border-r-gray-900 content-[''];
+    }
+  }
+
+  #timeline [type='radio']:checked {
+    // 當 radio 為 checked 時，僅選擇其相鄰元素，如果用 #timeline ... 會選到所有元素。
+
+    & ~ .experience-box #jobtitle {
+      @apply transition-all duration-[0.3s] md:mt-3;
+    }
+
+    & ~ #date {
+      @apply translate-x-[0.5rem] text-sky-300 transition-all duration-[0.3s] md:translate-x-0;
+    }
+
+    & ~ #job-tenure {
+      @apply translate-x-[0.5rem] text-sky-300 transition-all duration-[0.3s] md:translate-x-0;
+    }
+
+    & ~ #circle {
+      @apply border-[3px] border-sky-400 transition-all;
+    }
+
+    & ~ .experience-box {
+      @apply mr-[0.5rem] max-h-full translate-x-[0.5rem] border-sky-400 transition-all duration-[0.3s] md:mr-[1.2rem]  md:translate-x-[1.2rem];
+
+      & > p {
+        @apply flex animate-fadeIn flex-row transition-colors;
+      }
+
+      &::before {
+        @apply border-r-sky-400 transition-colors;
+      }
+    }
+  }
+}

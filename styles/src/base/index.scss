@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'La Belle Aurore';
+  src: url('../public/fonts/LaBelleAurore-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'RussoOne';
+  src: url('../public/fonts/RussoOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../public/fonts/Orbitron-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Play';
+  src: url('../public/fonts/Play-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../public/fonts/Outfit-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'MSBlack';
+  src: url('../public/fonts/MSBlack.ttf');
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  :root {
+    --navbar-height: 5rem;
+    --footer-height: 20rem;
+  }
+}

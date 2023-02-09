@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "La Belle Aurore";
+  src: url("../public/fonts/LaBelleAurore-Regular.ttf");
+}
+@font-face {
+  font-family: "RussoOne";
+  src: url("../public/fonts/RussoOne-Regular.ttf");
+}
+@font-face {
+  font-family: "Orbitron";
+  src: url("../public/fonts/Orbitron-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Play";
+  src: url("../public/fonts/Play-Regular.ttf");
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../public/fonts/Outfit-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "MSBlack";
+  src: url("../public/fonts/MSBlack.ttf");
+}
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  :root {
+    --navbar-height: 5rem;
+    --footer-height: 20rem;
+  }
+}
+@layer components {
+  /* The safelist created by Sass will be deleted in production mode. */
+  /* @apply animate-delay-[3s]; */
+  /* @apply animate-delay-[3.1s]; */
+  /* @apply animate-delay-[3.2s]; */
+  /* @apply animate-delay-[3.3s]; */
+  /* @apply animate-delay-[3.4s]; */
+  /* @apply animate-delay-[3.5s]; */
+  /* @apply animate-delay-[3.6s]; */
+  /* @apply animate-delay-[3.7s]; */
+  /* @apply animate-delay-[3.8s]; */
+  /* @apply animate-delay-[3.9s]; */
+  /* @apply animate-delay-[4s]; */
+  /* @apply animate-delay-[4.1s]; */
+  /* @apply animate-delay-[4.2s]; */
+  /* @apply animate-delay-[4.3s]; */
+  /* @apply animate-delay-[4.4s]; */
+  /* @apply animate-delay-[4.5s]; */
+  /* @apply animate-delay-[4.6s]; */
+  /* @apply animate-delay-[4.7s]; */
+  /* @apply animate-delay-[4.8s]; */
+  /* @apply animate-delay-[4.9s]; */
+  /* @apply animate-delay-[5s]; */
+  /* @apply animate-delay-[5.1s]; */
+  /* @apply animate-delay-[5.2s]; */
+  /* @apply animate-delay-[5.3s]; */
+  /* @apply animate-delay-[5.4s]; */
+  /* @apply animate-delay-[5.5s]; */
+  /* @apply animate-delay-[5.6s]; */
+  /* @apply animate-delay-[5.7s]; */
+  /* @apply animate-delay-[5.8s]; */
+  /* @apply animate-delay-[5.9s]; */
+  /* @apply animate-delay-[6s]; */
+  /* @apply animate-delay-[6.1s]; */
+  /* @apply animate-delay-[6.2s]; */
+  /* @apply animate-delay-[6.3s]; */
+  /* @apply animate-delay-[6.4s]; */
+  /* @apply animate-delay-[6.5s]; */
+  /* @apply animate-delay-[6.6s]; */
+  /* @apply animate-delay-[6.7s]; */
+  /* @apply animate-delay-[6.8s]; */
+  /* @apply animate-delay-[6.9s]; */
+  /* @apply animate-delay-[7s]; */
+  /* @apply animate-delay-[7.1s]; */
+}
+@layer components {
+  .flat-btn {
+    @apply my-1 inline-block border border-sky-300 px-8 py-4 text-sm font-bold uppercase tracking-[0.5rem] text-sky-300 no-underline transition-colors duration-300;
+  }
+  .flat-btn:hover {
+    @apply bg-sky-300 text-gray-900;
+  }
+  .flat-btn:focus {
+    @apply outline-none ring ring-sky-300;
+  }
+  .flat-btn:active {
+    @apply border-sky-600 text-sky-600;
+  }
+  .flat-btn:disabled {
+    @apply border-gray-400 bg-transparent text-gray-400;
+  }
+  @screen sm {
+    .flat-btn {
+      @apply text-base;
+    }
+  }
+}
+@layer components {
+  .tags {
+    @apply font-belle text-lg text-sky-300 opacity-60 sm:text-xl;
+  }
+}
+@layer components {
+  .opening-bg-image {
+    @apply relative z-0 overflow-hidden bg-transparent;
+  }
+  .opening-bg-image::after {
+    @apply absolute -top-[5rem] z-[-1] h-full w-full -rotate-12 scale-100 animate-bounceIn bg-contain bg-[center] bg-no-repeat opacity-[5%] bg-blend-multiply content-[""] animate-duration-[1s] animate-delay-[1.5s] 2xl:scale-75;
+    background-image: url("/nilswg-blue-noblack.svg");
+  }
+}
+@layer components {
+  .blob-mask {
+    mask-image: url("/img/blob.svg");
+    mask-repeat: no-repeat;
+    mask-position: center center;
+  }
+}
+@layer components {
+  /* The safelist created by Sass will be deleted in production mode. */
+  /* @apply rotate-[-10deg]; */
+  /* @apply animate-delay-[0s]; */
+  /* @apply rotate-[8deg]; */
+  /* @apply animate-delay-[0.1s]; */
+  /* @apply rotate-[26deg]; */
+  /* @apply animate-delay-[0.2s]; */
+  /* @apply rotate-[44deg]; */
+  /* @apply animate-delay-[0.3s]; */
+  /* @apply rotate-[62deg]; */
+  /* @apply animate-delay-[0.4s]; */
+  /* @apply rotate-[80deg]; */
+  /* @apply animate-delay-[0.5s]; */
+  /* @apply rotate-[98deg]; */
+  /* @apply animate-delay-[0.6s]; */
+  /* @apply rotate-[116deg]; */
+  /* @apply animate-delay-[0.7s]; */
+  /* @apply rotate-[134deg]; */
+  /* @apply animate-delay-[0.8s]; */
+  /* @apply rotate-[152deg]; */
+  /* @apply animate-delay-[0.9s]; */
+  /* @apply rotate-[170deg]; */
+  /* @apply animate-delay-[1s]; */
+  /* @apply rotate-[188deg]; */
+  /* @apply animate-delay-[1.1s]; */
+  /* @apply rotate-[206deg]; */
+  /* @apply animate-delay-[1.2s]; */
+  /* @apply rotate-[224deg]; */
+  /* @apply animate-delay-[1.3s]; */
+  /* @apply rotate-[242deg]; */
+  /* @apply animate-delay-[1.4s]; */
+  /* @apply rotate-[260deg]; */
+  /* @apply animate-delay-[1.5s]; */
+  /* @apply rotate-[278deg]; */
+  /* @apply animate-delay-[1.6s]; */
+  /* @apply rotate-[296deg]; */
+  /* @apply animate-delay-[1.7s]; */
+  /* @apply rotate-[314deg]; */
+  /* @apply animate-delay-[1.8s]; */
+  /* @apply rotate-[332deg]; */
+  /* @apply animate-delay-[1.9s]; */
+}
+@layer components {
+  #timeline .experience-box {
+    @apply mr-[0.5rem] max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl block cursor-pointer rounded-sm border-2 border-sky-800 py-4 md:mr-[1.2rem];
+  }
+  #timeline .experience-box::before {
+    @apply pointer-events-none absolute top-[50%] right-[100%] -mt-[0.75rem] border-[0.75rem] border-transparent border-r-sky-800 content-[""];
+  }
+  #timeline .experience-box::after {
+    @apply pointer-events-none absolute top-[50%] right-[calc(100%-3px)] -mt-[0.75rem] border-[0.75rem] border-transparent border-r-gray-900 content-[""];
+  }
+  #timeline [type=radio]:checked ~ .experience-box #jobtitle {
+    @apply transition-all duration-[0.3s] md:mt-3;
+  }
+  #timeline [type=radio]:checked ~ #date {
+    @apply translate-x-[0.5rem] text-sky-300 transition-all duration-[0.3s] md:translate-x-0;
+  }
+  #timeline [type=radio]:checked ~ #job-tenure {
+    @apply translate-x-[0.5rem] text-sky-300 transition-all duration-[0.3s] md:translate-x-0;
+  }
+  #timeline [type=radio]:checked ~ #circle {
+    @apply border-[3px] border-sky-400 transition-all;
+  }
+  #timeline [type=radio]:checked ~ .experience-box {
+    @apply mr-[0.5rem] max-h-full translate-x-[0.5rem] border-sky-400 transition-all duration-[0.3s] md:mr-[1.2rem]  md:translate-x-[1.2rem];
+  }
+  #timeline [type=radio]:checked ~ .experience-box > p {
+    @apply flex animate-fadeIn flex-row transition-colors;
+  }
+  #timeline [type=radio]:checked ~ .experience-box::before {
+    @apply border-r-sky-400 transition-colors;
+  }
+}

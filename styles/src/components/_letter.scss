@@ -1,0 +1,6 @@
+@layer components {
+  /* The safelist created by Sass will be deleted in production mode. */
+  @for $i from 30 through 71 {
+    /* @apply animate-delay-[#{calc($i/10)}s]; */
+  }
+}

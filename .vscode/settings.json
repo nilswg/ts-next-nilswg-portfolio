@@ -1,0 +1,9 @@
+{
+  "path-intellisense.mappings": {
+    "@": "${workspaceFolder}",
+    "@components": "${workspaceFolder}/components",
+    "@pages": "${workspaceFolder}/pages",
+    "@public": "${workspaceFolder}/public",
+    "@styles": "${workspaceFolder}/styles",
+  }
+}

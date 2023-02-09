@@ -1,0 +1,7 @@
+@layer components {
+  /* The safelist created by Sass will be deleted in production mode. */
+  @for $i from 0 to 20 {
+    /* @apply rotate-[#{-10 + $i * 18}deg]; */
+    /* @apply animate-delay-[#{calc($i/10)}s]; */
+  }
+}
