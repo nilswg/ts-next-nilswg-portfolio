@@ -17,7 +17,7 @@ const ExperienceDescription = () => {
   ) : (
     <>
       <p className="animate-fadeIn">
-        擁有 2.5
+        目前約有 2.5
         年的網頁應用與網頁服務器的開發經驗，參與過大型多人的開發項目，包括個人網頁、網頁遊戲，乃至大型的商業使用的ERP系統。
       </p>
     </>

@@ -64,15 +64,15 @@ const EnTexts = () => (
 const ChTexts = () => (
   <>
     <p className="animate-fadeIn">
-      十分熟悉 <b>TypeScript</b> 與 <b>React.js</b>、<b>Next.js</b> 來創建{' '}
-      <b>Web</b> 應用。
+      精通 <b>TypeScript</b> ，並熟悉以 <b>React.js</b> 與 <b>Next.js</b> 構建
+      Web 應用。
     </p>{' '}
     <p className="animate-fadeIn animate-delay-[1s]">
-      至於後端技術，熟悉於 <b>Node.js</b> 環境和 <b>Express.js</b> 構建{' '}
-      <b>Web</b> 服務器，解決I/O密集型任務和由高並發帶來的性能瓶頸。
+      後端技術，熟悉 <b>Node.js</b> 的運行環境，以 <b>Express.js</b> 構建
+      Web 服務器，解決I/O密集型任務和由高並發帶來的性能瓶頸。
     </p>{' '}
     <p className="animate-fadeIn animate-delay-[2s]">
-      對於數據庫系統，使用 <b>Redis</b> 實作高性能快取與實時串流服務，並以{' '}
+      數據庫系統，使用過 <b>Redis</b> 實作高性能快取與實時串流服務，並以{' '}
       <b>PostgreSQL</b> 與 <b>MongoDB</b>{' '}
       提供高可用性，對各種結構的資料存取和檢索。
     </p>
