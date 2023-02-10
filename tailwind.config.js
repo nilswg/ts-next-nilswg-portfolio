@@ -62,6 +62,9 @@ module.exports = withAnimations({
           }
         }
       },
+      boxShadow: {
+        card: '5px 5px 20px rgba(75, 85, 99, 1)'
+      }
     },
   },
   plugins: [],

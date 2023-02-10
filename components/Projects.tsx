@@ -8,29 +8,11 @@ const projList = [
   {
     id: 'ts-next-nilswg-portfolio',
     title: 'Portfolio',
-    demo: '',
-    github: '',
+    demo: 'https://ts-next-nilswg-portfolio.vercel.app/',
+    github: 'https://github.com/nilswg/ts-next-nilswg-portfolio',
     preview: '/img/projects/ts-next-nilswg-portfolio.png',
     tags: ['React', 'Next.js', 'Tailwind', 'Zustand'],
-    description: "Nilson Weng's personal website. The portfolio page.",
-  },
-  {
-    id: 'proj2',
-    title: 'Meetup Room App',
-    demo: '',
-    github: '',
-    preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-    tags: ['React', 'Next.js'],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  },
-  {
-    id: 'proj3',
-    title: 'Just Leetcode',
-    demo: '',
-    github: '',
-    preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-    tags: ['React', 'Next.js'],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description: "Nilson Weng's personal portfolio website.",
   },
   {
     id: 'ts-vite-react-weather-app',
@@ -42,24 +24,43 @@ const projList = [
     description:
       'This is a weather app for learning purposes and built with React and Typescript.',
   },
-  {
-    id: 'proj5',
-    title: 'Food Recipe',
-    demo: '',
-    github: '',
-    preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-    tags: ['React', 'Next.js'],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  },
-  {
-    id: 'proj6',
-    title: 'Lowkeydd',
-    demo: '',
-    github: '',
-    preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-    tags: ['React', 'Next.js'],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  },
+  // {
+  //   id: 'proj2',
+  //   title: 'Meetup Room App',
+  //   demo: '',
+  //   github: '',
+  //   preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
+  //   tags: ['React', 'Next.js'],
+  //   description:
+  //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  // },
+  // {
+  //   id: 'proj3',
+  //   title: 'Just Leetcode',
+  //   demo: '',
+  //   github: '',
+  //   preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
+  //   tags: ['React', 'Next.js'],
+  //   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  // },
+  // {
+  //   id: 'proj5',
+  //   title: 'Food Recipe',
+  //   demo: '',
+  //   github: '',
+  //   preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
+  //   tags: ['React', 'Next.js'],
+  //   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  // },
+  // {
+  //   id: 'proj6',
+  //   title: 'Lowkeydd',
+  //   demo: '',
+  //   github: '',
+  //   preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
+  //   tags: ['React', 'Next.js'],
+  //   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  // },
 ]
 
 const ProjectsDescription = () => {
@@ -97,7 +98,7 @@ const Projects = () => {
         <h1 className="tags ml-6">{'<div class="grid">'}</h1>
       </VerticalFrame>
       <div className="flex w-full flex-col items-center self-center">
-        <div className="grid max-w-3xl grid-cols-1 gap-10 px-9 py-5 lg:grid-cols-2 2xl:max-w-full 2xl:grid-cols-3">
+        <div className="grid max-w-4xl grid-cols-1 gap-10 px-0 py-5 xs:px-9 lg:grid-cols-2 2xl:max-w-full 2xl:grid-cols-3">
           {projList.map((proj, i) => (
             <ProjectCard
               key={`proj_${proj.id}`}

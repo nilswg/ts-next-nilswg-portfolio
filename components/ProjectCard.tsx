@@ -1,10 +1,8 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { ReactNode, useCallback, useState } from 'react'
-import { AiFillGithub } from 'react-icons/ai'
-import { MdAirplay } from 'react-icons/md'
 import IntersectionLine from './IntersectionLine'
-import ProjectTag from './ProjectTag'
+import ProjectLinks from './ProjectLinks'
+import ProjectTags from './ProjectTags'
 
 type Props = {
   tags: string[]
@@ -24,49 +22,26 @@ const ProjectCard = ({
   preview,
 }: Props) => (
   <FlipAnimation>
-    <div className="max-w-sm rounded-lg bg-white shadow-lg">
-      <div className="flex flex-col justify-center">
-        <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-          <div className="relative h-[10.5rem] w-full xs:h-[14rem] sm:h-[18rem] lg:h-[16rem]">
-            <Image
-              className="rounded-t-lg"
-              src={preview}
-              alt={`preview image of ${title}`}
-              fill
-            />
-          </div>
-        </a>
-        <div className="relative">
-          <Link href={github} className="absolute -top-5 right-[0.75rem]">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-3xl shadow-lg">
-              {' '}
-              <AiFillGithub />{' '}
-            </span>
-          </Link>
-          <Link href={demo} className="absolute -top-5 right-[4.5rem]">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-3xl shadow-lg">
-              {' '}
-              <MdAirplay />{' '}
-            </span>
-          </Link>
-        </div>
-        <div className="p-6">
-          <div className="over h-[10rem] overflow-y-scroll">
-            <p className="mt-5 break-words font-outfit text-4xl font-thin text-gray-900">
-              {title}
-            </p>
-            <p className="mt-3 break-words px-1 sm:text-justify font-outfit text-base text-gray-700">
-              {description}
-            </p>
-          </div>
-          <div className="h-[6rem] overflow-hidden">
-            <div className="mt-6 flex flex-wrap">
-              {tags.map((tag, i) => (
-                <ProjectTag key={`tag_${tag}`} text={tag} />
-              ))}
-            </div>
-          </div>
-        </div>
+    <div className="group relative h-[210px] w-[280px] overflow-hidden rounded-md shadow-card sm:h-[300px] sm:w-[400px]">
+      <div className="relative h-[210px] w-full sm:h-[300px]">
+        <Image
+          className=""
+          src={preview}
+          alt={`picture of ${title}`}
+          loading="lazy"
+          objectFit="fill"
+          fill
+        />
+      </div>
+      <div className="absolute top-[150px] h-full w-full bg-myblack px-6 opacity-60 duration-300 before:absolute before:left-0 before:top-1 before:h-full before:w-full before:border-t-[1px] before:border-sky-600 group-hover:top-[2.5rem] group-hover:opacity-90 sm:top-[220px]">
+        <ProjectLinks demo={demo} github={github} />
+        <p className="max-h-[55px] overflow-hidden break-words pt-4 pb-2 font-outfit text-2xl font-[300] text-white sm:max-h-[70px] sm:pt-6 sm:text-4xl">
+          {title}
+        </p>
+        <p className="my-1 max-h-[60px] overflow-hidden break-words font-outfit text-sm font-[200] text-white sm:my-2 sm:max-h-[90px] sm:text-justify sm:text-lg">
+          {description}
+        </p>
+        <ProjectTags title={title} tags={tags} />
       </div>
     </div>
   </FlipAnimation>
