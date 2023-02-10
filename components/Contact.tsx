@@ -34,9 +34,11 @@ const FormFields = () => {
   const lang = useStores((state) => state.lang)
   const fontStyle = lang === 'en' ? 'font-outfit' : 'font-zhtw'
   return (
-    <ul className={`flex flex-col gap-8 py-8 ${fontStyle} text-sm sm:text-lg`}>
-      <li className="flex flex-row gap-2">
-        <div className="relative mr-2 w-full">
+    <ul
+      className={`flex flex-col gap-8 py-8 ${fontStyle} text-sm sm:text-lg contact-aufofill`}
+    >
+      <li className="flex flex-col gap-8 sm:flex-row sm:gap-2">
+        <div className="relative w-full">
           <input
             type="text"
             name="name"

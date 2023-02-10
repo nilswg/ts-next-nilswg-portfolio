@@ -197,3 +197,23 @@
     @apply border-r-sky-400 transition-colors;
   }
 }
+@layer components {
+  .contact-aufofill input:-webkit-autofill,
+  .contact-aufofill input:-webkit-autofill:enabled,
+  .contact-aufofill input:-webkit-autofill:hover,
+  .contact-aufofill input:-webkit-autofill:focus,
+  .contact-aufofill textarea:-webkit-autofill,
+  .contact-aufofill textarea:-webkit-autofill:enabled,
+  .contact-aufofill textarea:-webkit-autofill:hover,
+  .contact-aufofill textarea:-webkit-autofill:focus,
+  .contact-aufofill select:-webkit-autofill,
+  .contact-aufofill select:-webkit-autofill:enabled,
+  .contact-aufofill select:-webkit-autofill:hover,
+  .contact-aufofill select:-webkit-autofill:focus {
+    /* @apply text-sky-600 bg-myblack; */
+    -webkit-text-fill-color: rgb(56, 189, 248);
+    -webkit-box-shadow: 0 0 0px 1000px rgb(28, 29, 37) inset;
+    box-shadow: 0 0 0px 1000px rgb(28, 29, 37) inset;
+    background-color: rgb(28, 29, 37);
+  }
+}
