@@ -2,10 +2,10 @@ import { useRouter } from 'next/router'
 import type { ReactNode } from 'react'
 
 import Head from 'next/head'
+import Footer from './Footer'
 import NavBar from './Navbar'
 import PageLoader from './PageLoader'
 import Toasts from './Toasts'
-import Footer from './Footer'
 
 type LayoutProps = {
   children?: ReactNode

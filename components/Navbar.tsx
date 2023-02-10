@@ -52,7 +52,7 @@ const Navbar = () => {
               <Link
                 key={i}
                 href={item.href}
-                className="py-2 px-2 font-russon text-3xl text-justify w-[12rem]"
+                className="w-[12rem] py-2 px-2 text-justify font-russon text-3xl"
                 onClick={switchMenuOpen}
               >
                 {item.text}
@@ -72,7 +72,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="mt-auto pb-8">
-          <SocialLinks className="flex gap-5 justify-center py-2 text-5xl text-white" />
+          <SocialLinks className="flex justify-center gap-5 py-2 text-5xl text-white" />
         </div>
       </VerticalFrame>
     </header>

@@ -12,7 +12,7 @@ const SectionText = ({ children }: Props) => {
     <>
       <h1 className="tags ml-6">{'<p>'}</h1>
       <div
-        className={`mx-9 my-1 ${fontStyle} sm:text-justify text-sm tracking-widest text-gray-400 sm:text-base flex flex-col gap-2`}
+        className={`mx-9 my-1 ${fontStyle} flex flex-col gap-2 text-sm tracking-widest text-gray-400 sm:text-justify sm:text-base`}
       >
         {children}
       </div>

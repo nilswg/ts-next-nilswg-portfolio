@@ -1,5 +1,4 @@
 import { useStores } from '@/stores'
-import { useEffect } from 'react'
 
 type LangInputProps = {
   className: string
