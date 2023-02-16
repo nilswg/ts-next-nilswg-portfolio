@@ -8,18 +8,18 @@ const mySkills = [
   { id: 'JavaScript', img: '/img/skills/JavaScript.svg' },
   { id: 'React', img: '/img/skills/React-Dark.svg' },
   { id: 'Next.js', img: '/img/skills/NextJS-Dark.svg' },
+  { id: 'Express', img: '/img/skills/expressjs.png' },
   { id: 'Redux', img: '/img/skills/Redux.svg' },
   { id: 'Node.js', img: '/img/skills/nodejs-dark.svg' },
-  { id: 'Express', img: '/img/skills/expressjs.png' },
-  { id: 'Deno', img: '/img/skills/deno-dark.svg' },
   { id: 'HTML', img: '/img/skills/HTML.svg' },
   { id: 'CSS', img: '/img/skills/CSS.svg' },
   { id: 'Angular', img: '/img/skills/Angular-Dark.svg' },
   { id: 'RxJS', img: '/img/skills/rxjs.png' },
-  { id: 'Pug', img: '/img/skills/pug-dark.svg' },
+  { id: 'Deno', img: '/img/skills/deno-dark.svg' },
   { id: 'Tailwind', img: '/img/skills/tailwind.png' },
   { id: 'Sass', img: '/img/skills/sass.png' },
   { id: 'Styled\nComponents', img: '/img/skills/styled-components.svg' },
+  { id: 'Pug', img: '/img/skills/pug-dark.svg' },
   { id: 'BabylonJS', img: '/img/skills/babylon.png' },
   { id: 'PixiJS', img: '/img/skills/pixijs.png' },
   { id: 'GreenSock', img: '/img/skills/greensock.png' },
@@ -33,30 +33,35 @@ const mySkills = [
   { id: 'Git', img: '/img/skills/Git.svg' },
   { id: 'NPM', img: '/img/skills/npm.png' },
   { id: 'Webpack', img: '/img/skills/webpack-dark.svg' },
-  { id: 'Rollup', img: '/img/skills/rollup-dark.svg' },
   { id: 'Vite', img: '/img/skills/vite-dark.svg' },
+  { id: 'Rollup', img: '/img/skills/rollup-dark.svg' },
   { id: 'Prettier', img: '/img/skills/prettier.png' },
-  { id: 'C', img: '/img/skills/clang.svg' },
-  { id: 'Python', img: '/img/skills/Python-Dark.svg' },
   { id: 'Golang', img: '/img/skills/golang.svg' },
   { id: 'Rust', img: '/img/skills/rust.svg' },
+  { id: 'Python', img: '/img/skills/Python-Dark.svg' },
+  { id: 'C', img: '/img/skills/clang.svg' },
 ]
 
 const EnTexts = () => (
   <>
     <p className="animate-fadeIn">
-      Proficient in <b>TypeScript</b>, and use <b>React.js</b>, <b>Next.js</b>{' '}
-      to create web application.
+      Proficient in <b>TypeScript</b> and use <b>React.js</b> and <b>Next.js</b>{' '}
+      to create web applications.
     </p>{' '}
-    <p className="animate-fadeIn animate-delay-[1s]">
+    <p>
+      My favored CSS framework is Tailwind. In my personal projects, I've found
+      that utilizing both Tailwind and Sass provides the most comprehensive
+      styling solution.
+    </p>
+    <p className="animate-fadeIn">
       For the backend, specialize in <b>Node.js</b> and <b>Express.js</b> to
-      build the <b>Web</b> server, which solves the I/O intensive tasks and
+      build the <b>web</b> server, which solves the I/O-intensive tasks and
       performance bottlenecks caused by high concurrency.
     </p>{' '}
-    <p className="animate-fadeIn animate-delay-[2s]">
-      For the database system, using <b>Redis</b> for high-performance caching
-      and real-time streaming, as well as <b>PostgreSQL</b> and <b>MongoDB</b>{' '}
-      for high availability data access and retrieval.
+    <p className="animate-fadeIn">
+      For the database system, use <b>Redis</b> for high-performance caching and
+      real-time streaming, as well as <b>PostgreSQL</b> and <b>MongoDB</b> for
+      high availability data access and retrieval.
     </p>
   </>
 )
@@ -64,14 +69,18 @@ const EnTexts = () => (
 const ChTexts = () => (
   <>
     <p className="animate-fadeIn">
-      精通 <b>TypeScript</b> ，並熟悉以 <b>React.js</b> 與 <b>Next.js</b> 構建
-      Web 應用。
+      我能充分運用 <b>TypeScript</b> ，搭配不同技術，如 <b>React.js</b>、
+      <b>Next.js</b>、<b>Angular</b> 構建 Web 應用。
     </p>{' '}
-    <p className="animate-fadeIn animate-delay-[1s]">
-      後端技術，熟悉 <b>Node.js</b> 的運行環境，以 <b>Express.js</b> 構建
-      Web 服務器，解決I/O密集型任務和由高並發帶來的性能瓶頸。
+    <p className="animate-fadeIn">
+      我最喜歡的 CSS 框架是 Tailwind，在我的個人專案中，我發現同時使用 Tailwind
+      與 Sass，能提供最完整的樣式解決方案。
+    </p>
+    <p className="animate-fadeIn">
+      後端技術，熟悉 <b>Node.js</b> 的運行環境，以 <b>Express.js</b> 構建 Web
+      服務器，解決I/O密集型任務和由高並發帶來的性能瓶頸。
     </p>{' '}
-    <p className="animate-fadeIn animate-delay-[2s]">
+    <p className="animate-fadeIn">
       數據庫系統，使用過 <b>Redis</b> 實作高性能快取與實時串流服務，並以{' '}
       <b>PostgreSQL</b> 與 <b>MongoDB</b>{' '}
       提供高可用性，對各種結構的資料存取和檢索。

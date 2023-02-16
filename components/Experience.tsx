@@ -9,7 +9,7 @@ const ExperienceDescription = () => {
     <>
       <p className="animate-fadeIn">
         I have 2.5 years of experience in web application and web server
-        development, participating in large-scale multi-person projects,
+        development, participating in large-scale, multi-person projects,
         including personal web pages, web games, and even ERP systems used by
         enterprises.
       </p>

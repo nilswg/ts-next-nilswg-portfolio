@@ -43,12 +43,8 @@ const layout = ({ children }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <main className="mt-[var(--navbar-height)] w-full">
-        <h1 className="tags ml-4 text-xl leading-10">{'<html>'}</h1>
-        <h1 className="tags ml-6 text-xl leading-10">{'<body>'}</h1>
+      <main className="w-full">
         {children}
-        <h1 className="tags ml-6 text-xl leading-10">{'</body>'}</h1>
-        <h1 className="tags ml-4 text-xl leading-10">{'</html>'}</h1>
       </main>
       <Footer />
       {<PageLoader />}

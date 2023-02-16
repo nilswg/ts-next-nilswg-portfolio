@@ -9,10 +9,9 @@ import SectionTitle from './SectionTitle'
 
 const EnTexts = () => (
   <p className="animate-fadeIn animate-delay-[0]">
-    Currently, I'm looking for a <b>full-stack developer</b> position,&nbsp;
-    <b>remote preferred</b>. Always up for new challenges and enjoy working with
+    Currently, I'm looking for a <b>full-stack developer</b> position; <b>remote work is preferred</b>. I'm always up for new challenges and enjoy working with
     companies or people who share my passion for innovation and creativity.
-    Also, if you have other question or request, don't hesitate to contact me
+    Also, if you have any other question or request, don't hesitate to contact me
     using the form here!
   </p>
 )

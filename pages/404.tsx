@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const NotFoundPage = () => (
-  <main className="flex min-h-[calc(100vh-10rem)] w-full flex-col items-center justify-center bg-myblack">
+  <main className="flex min-h-screen w-full flex-col items-center justify-center bg-myblack">
     <h1 className="text-9xl font-extrabold tracking-widest text-white">404</h1>
     <div className="absolute rotate-12 rounded bg-[#FF6A3D] px-2 text-sm">
       Page Not Found
