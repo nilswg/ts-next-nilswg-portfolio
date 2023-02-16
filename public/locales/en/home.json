@@ -1,0 +1,132 @@
+{
+  "openings": {
+    "letters": ["Hi, ", "I'm Nilson Weng,", "full-stack developer."],
+    "typewriter": [
+      "Proficient in TypeScript",
+      "Specialized in Node.js, React, Next.js",
+      "Specialized in web application development"
+    ],
+    "learnmore": "LEARN MORE"
+  },
+  "about": {
+    "title": "About",
+    "texts": [
+      "I am a motivated and skilled <b>full-stack web developer</b> with <b>2.5 years</b> of development experience.",
+      "<b>Typescript</b> is a language that I always use and promote throughout my work. In the past, I used it with <b>Pixi.js</b> and <b>Babylon.js</b> to create <b>2D canvas animations</b> and <b>3D WebGL</b> animations, and I completed <b>six</b> casino games in total. Also, I have used it to work with a team of <b> more than 20</b> people to build large-scale business ERP systems using <b>Angular</b> as the front-end framework. Even in my spare time, I enjoy using it with <b>Node.js</b>, <b>React</b>, <b>Express</b>, <b>Vite</b>, etc. to explore cutting-edge web technologies. My personal website was also built with it using <b>Next.js</b>.",
+      "I am a self-taught expert and like to share what I have learned. For example, in previous work, I shared new dev tools with colleagues, such as <b>Prettier</b>, to improve the quality and readability of code. In addition, in my personal Discord group, I often serve as the main speaker, and I've already helped <b>two</b> group members get jobs as front-end developers."
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "texts": [
+      "I have 2.5 years of experience in web application and web server development, participating in large-scale, multi-person projects, including personal web pages, web games, and even ERP systems used by enterprises."
+    ]
+  },
+  "experience-timeline": [
+    {
+      "id": "work2",
+      "img": "/img/experiences/lattek.jpg",
+      "company": "Dah Lih Puh Co., Ltd",
+      "jobtitle": "Full Stack Developer",
+      "jobposition": "Senior Engineer",
+      "location": "台中市",
+      "begintime": [2021, 12],
+      "endtime": [2022, 9],
+      "texts": [
+        "Assist companies in building the next-generation ERP systems.",
+        "Help the architect maintain the company's front-end shared modules and version control with GitLab.",
+        "Use Prettier and ESLint improve the quality and readability of code",
+        "Use Angular 2+ to construct the user interface.",
+        "Build RESTful CRUD APIs with ASP.NET Core (3.1+).",
+        "Write PL/SQL stored procedures to interact with the Oracle database."
+      ]
+    },
+    {
+      "id": "work1",
+      "img": "/img/experiences/chungyo.png",
+      "company": "La Pluma Fashion Group Co., Ltd",
+      "jobtitle": "Game Program Developer",
+      "jobposition": "Assistant Engineer",
+      "location": "台中市",
+      "begintime": [2019, 10],
+      "endtime": [2021, 3],
+      "texts": [
+        "Develop web-based game projects using Canvas 2D and WebGL.",
+        "Maintain the game to run correctly on different browsers and mobile devices.",
+        "Use Pixi.js to create 2D games such as slots, little mary slots, and match-3.",
+        "Use Babylon.js to create 3D games like Coin Pusher.",
+        "Integrate APIs to complete the main game and other payment functions."
+      ]
+    },
+    {
+      "id": "university",
+      "img": "/img/experiences/thu.png",
+      "company": "Tung Hai University",
+      "jobtitle": "Computer Science and Information Engineering",
+      "jobposition": "Bachelor",
+      "location": "台中市",
+      "begintime": [2013, 7],
+      "endtime": [2017, 1],
+      "texts": [
+        "I entered the second year of the CSIE Department as a transfer student from the same college's architecture department."
+      ]
+    }
+  ],
+  "skills": {
+    "title": "Skills",
+    "texts": [
+      "Proficient in <b>TypeScript</b> and use <b>React.js</b> and <b>Next.js</b> to create web applications.",
+      "My favored CSS framework is Tailwind. In my personal projects, I've found that utilizing both Tailwind and Sass provides the most comprehensive styling solution.",
+      "For the backend, specialize in <b>Node.js</b> and <b>Express.js</b> to build the <b>web</b> server, which solves the I/O-intensive tasks and performance bottlenecks caused by high concurrency.",
+      "For the database system, use <b>Redis</b> for high-performance caching and real-time streaming, as well as <b>PostgreSQL</b> and <b>MongoDB</b> for high availability data access and retrieval."
+    ]
+  },
+  "projects": {
+    "title": "Experience",
+    "texts": ["There are my side projects here."]
+  },
+  "contact": {
+    "title": "Contact",
+    "texts": [],
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "topic": "Topic",
+      "message": "Message"
+    },
+    "topics": {
+      "choose": "Choose one",
+      "options": [
+        {
+          "id": "job",
+          "text": "Job Invitation"
+        },
+        {
+          "id": "suggest",
+          "text": "Give me suggestion"
+        },
+        {
+          "id": "ask",
+          "text": "Questions for me?"
+        },
+        {
+          "id": "other",
+          "text": "Other"
+        }
+      ]
+    },
+    "send": "SEND",
+    "errorDict": {
+      "topic_invalid_enum_value": "Choose a topic",
+      "email_invalid_string": "Invalid Email Address",
+      "name_invalid_string": "Invalid Name",
+      "message_invalid_string": "Invalid Message",
+      "email_too_small": "Email address too short",
+      "name_too_small": "Name too short",
+      "message_too_small": "Message too short",
+      "server_error": "Internal Server Error",
+      "success": "Your email has been sent successfully!",
+      "error": "Sending email failed"
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "openings": {
+    "letters": [
+      "您好!",
+      "我是 Nilson Weng，",
+      "是一位全端工程師"
+    ],
+    "typewriter": [
+      "嫻熟的TypeScript開發者",
+      "專精於Node.js, React, Next.js",
+      "專精於網頁應用開發"
+    ],
+    "learnmore": "瞭解更多"
+  },
+  "about": {
+    "title": "關於我",
+    "texts": [
+      "<b>Typescript</b> 是我職涯中一直使用且推廣的語言。我曾使用它配合 <b>Pixi.js</b> 和 <b>Babylon.js</b> 製作 <b>2D canvas 動畫</b> 與 <b>3D Webgl</b> 動畫，並完成共 <b>6</b> 個博弈遊戲。我也曾參與過 <b>20人以上</b>的開發團隊，以 <b>Angular</b> 作為前端框架，構建大型的商業ERP系統。 個人空閒之餘，也喜歡使用它搭配 <b>Node.js</b>、<b>React</b>、<b>Express</b>、<b>Vite</b> 來研究最新的網頁技術，如我的個人網站，也是使用它與 <b>Next.js</b> 來完成。",
+      "我本是一個行動能力強，熱衷學習各種技術知識，但在正式工作後，我領悟到不斷自我精進的同時，也要將所學到的知識分享給他人。例如，在之前工作中分享新的技術工具給團隊成員，如 <b>Prettier</b> 來提高代碼的品質與可讀性。此外，在我的 Discord 群組中，我時常擔任主要的技術分享者，目前也幫助群中 <b>2</b> 位成員取得前端工程師的工作。",
+      "我是一名充滿熱情且技術嫻熟的<b>全端工程師</b>，目前擁有 <b>2.5 年</b> 的開發經驗。"
+    ]
+  },
+  "experience": {
+    "title": "開發經驗",
+    "texts": [
+      "目前約有 2.5 年的網頁應用與網頁服務器的開發經驗，參與過大型多人的開發項目，包括個人網頁、網頁遊戲，乃至大型的商業使用的ERP系統。"
+    ]
+  },
+  "experience-timeline": [
+    {
+      "id": "work2",
+      "img": "/img/experiences/lattek.jpg",
+      "company": "英屬維京群島商拿鐵科技股份有限公司",
+      "jobtitle": "全端工程師",
+      "location": "台中市",
+      "jobposition": "資深工程師",
+      "begintime": [
+        2021,
+        12
+      ],
+      "endtime": [
+        2022,
+        9
+      ],
+      "texts": [
+        "協助企業打造新一代一致性 MES 與 ERP 系統",
+        "協助架構師維護底層共用模組與工具，並以 GitLab 版控",
+        "導入 Prettier、ESLint 提高程式碼品質",
+        "使用 Node.js 輔助開發工作，實作程式碼產出工具",
+        "使用 Angular(2+) 構建使用者操作介面",
+        "使用 ASP.NET Core(3.1+) 實作 RESTful CRUD API 與 JWT 驗證",
+        "使用 PL/SQL 撰寫 Store Procedure 存取 Oracle"
+      ]
+    },
+    {
+      "id": "work1",
+      "img": "/img/experiences/chungyo.png",
+      "company": "中佑集團凡谷興業有限公司",
+      "jobtitle": "遊戲程式設計師",
+      "jobposition": "助理工程師",
+      "location": "台中市",
+      "begintime": [
+        2019,
+        10
+      ],
+      "endtime": [
+        2021,
+        3
+      ],
+      "texts": [
+        "開發基於 canvas 2d 與 webgl 技術的網頁遊戲項目",
+        "擁有不同瀏覽器與移動裝置的產品開發與維護經驗",
+        "前後端 API 整合，實現遊戲主體功能與其他金流操作功能",
+        "以 TypeScript 為開發語言，配合公司自製的遊戲框架",
+        "以 Pixi.js 製作 2D 遊戲動畫，如老虎機、小瑪莉、消消樂",
+        "以 Babylon.js 製作 3D 遊戲動畫，如推幣機"
+      ]
+    },
+    {
+      "id": "university",
+      "img": "/img/experiences/thu.png",
+      "company": "私立東海大學",
+      "jobposition": "學士",
+      "jobtitle": "資訊工程學系(資電組) 畢業",
+      "location": "台中市",
+      "begintime": [
+        2013,
+        7
+      ],
+      "endtime": [
+        2017,
+        1
+      ],
+      "texts": [
+        "同校建築系學生，轉學進入資工系二年級就讀"
+      ]
+    }
+  ],
+  "skills": {
+    "title": "專業技術",
+    "texts": [
+      "我能充分運用 <b>TypeScript</b> 搭配不同技術進行開發，如 <b>React.js</b>、 <b>Next.js</b>、<b>Angular</b> 構建 Web 應用。",
+      "我最喜歡的 CSS 方案是 <b>Tailwind</b>，在我的個人專案中，我發現同時使用 <b>Tailwind</b> 與 <b>Sass</b>，能提供最完整的樣式解決方案。",
+      "後端技術，熟悉 <b>Node.js</b> 的運行環境，以 <b>Express.js</b> 構建 Web 服務器，解決I/O密集型任務和由高並發帶來的性能瓶頸。",
+      "數據庫系統，使用過 <b>Redis</b> 實作高性能快取與實時串流服務，並以 <b>PostgreSQL</b> 與 <b>MongoDB</b> 提供高可用性，對各種結構的資料存取和檢索。"
+    ]
+  },
+  "projects": {
+    "title": "個人專案",
+    "texts": [
+      "我有一些個人專案的作品來向你展示。"
+    ]
+  },
+  "contact": {
+    "title": "聯繫我",
+    "texts": [],
+    "fields": {
+      "name": "姓名",
+      "email": "電子郵件",
+      "topic": "主題",
+      "message": "訊息"
+    },
+    "topics": {
+      "choose": "請選擇",
+      "options": [
+        {
+          "id": "job",
+          "text": "工作邀約"
+        },
+        {
+          "id": "suggest",
+          "text": "給我建議"
+        },
+        {
+          "id": "ask",
+          "text": "向我提問"
+        },
+        {
+          "id": "other",
+          "text": "隨便聊聊"
+        }
+      ]
+    },
+    "send": "寄送訊息",
+    "errorDict": {
+      "topic_invalid_enum_value": "請選擇一下主題",
+      "email_invalid_string": "無效的電子郵件地址22",
+      "name_invalid_string": "無效的姓名",
+      "message_invalid_string": "無效的訊息留言",
+      "email_too_small": "電子郵件地址過短",
+      "name_too_small": "名稱過短",
+      "message_too_small": "訊息過短",
+      "server_error": "伺服器狀態異常",
+      "success": "你的信件已順利寄出!",
+      "error": "信件寄送失敗"
+    }
+  }
+}

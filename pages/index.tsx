@@ -4,6 +4,8 @@ import Experience from '@/components/Experience'
 import Opening from '@/components/Opening'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
+import { NextPageContext } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Home = () => {
   return (
@@ -20,6 +22,17 @@ const Home = () => {
       <h1 className="tags ml-4 text-xl leading-10">{'</html>'}</h1>
     </div>
   )
+}
+
+export async function getServerSideProps(ctx: NextPageContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(ctx.locale as string, [
+        'home',
+        'common',
+      ])),
+    },
+  }
 }
 
 export default Home
