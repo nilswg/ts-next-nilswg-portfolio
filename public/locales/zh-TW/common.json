@@ -1,4 +1,10 @@
 {
   "fontStyles": "font-zhtw",
-  "lang": "ch"
+  "lang": "ch",
+  "nav":{
+    "home":"主頁",
+    "projects":"個人專案",
+    "contact":"聯絡我",
+    "blog":"部落格"
+  }
 }
