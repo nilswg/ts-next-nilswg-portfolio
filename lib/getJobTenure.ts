@@ -3,7 +3,7 @@ type JobTime = number[]
 /**
  * 範例: getJobTenure( [2009, 03], [2012, 10] )
  */
-function getJobTenure(st: JobTime, ed: JobTime, lang: 'en' | 'ch' = 'en') {
+function getJobTenure(st: JobTime, ed: JobTime, lang: string = 'en') {
   /**
    * 從工作截止月(ed)減去工作起始月(st)
    * 不滿1個月者取1個月來算。
@@ -34,17 +34,17 @@ function getJobTenure(st: JobTime, ed: JobTime, lang: 'en' | 'ch' = 'en') {
     mm += 12
   }
 
-  if (lang === 'en') {
-    return (
-      (yy > 0 ? `${yy} year${yy > 1 ? 's' : ''}` : '') +
-      (yy > 0 && mm > 0 ? ' and ' : '') +
-      (mm > 0 ? `${mm} month${mm > 1 ? 's' : ''}` : '')
-    )
-  } else {
+  if (lang === 'ch') {
     return (
       (yy > 0 ? `${yy} 年` : '') +
       (yy > 0 && mm > 0 ? ' ' : '') +
       (mm > 0 ? `${mm} 個月` : '')
+    )
+  } else {
+    return (
+      (yy > 0 ? `${yy} year${yy > 1 ? 's' : ''}` : '') +
+      (yy > 0 && mm > 0 ? ' and ' : '') +
+      (mm > 0 ? `${mm} month${mm > 1 ? 's' : ''}` : '')
     )
   }
 }
