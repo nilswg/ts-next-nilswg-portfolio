@@ -1,4 +1,4 @@
-import { useStores } from '@/stores'
+import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
 
 type Props = {
@@ -6,8 +6,8 @@ type Props = {
 }
 
 const SectionText = ({ children }: Props) => {
-  const lang = useStores((state) => state.lang)
-  const fontStyle = lang === 'en' ? 'font-outfit' : 'font-zhtw'
+  const { locale } = useRouter()
+  const fontStyle = locale === 'en' ? 'font-outfit' : 'font-zhtw'
   return (
     <>
       <h1 className="tags ml-6">{'<p>'}</h1>

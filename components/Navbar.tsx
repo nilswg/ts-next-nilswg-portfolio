@@ -1,5 +1,7 @@
 import { useStores } from '@/stores'
+import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
+import { useMemo } from 'react'
 import EnChButton from './EnChButton'
 import { HorizontalFrame, VerticalFrame } from './NavbarFrames'
 import SocialLinks from './SocialLinks'
@@ -13,6 +15,18 @@ const navItems = [
 
 const Navbar = () => {
   const switchMenuOpen = useStores((state) => state.switchMenuOpen)
+
+  const { t } = useTranslation('common')
+  const navItems = useMemo(
+    () => [
+      { href: '/', text: t('nav.home') },
+      { href: '/#projects', text: t('nav.projects') },
+      { href: '/#contact', text: t('nav.contact') },
+      { href: '/blog', text: t('nav.blog') },
+    ],
+    [t]
+  )
+
   return (
     <header
       className={`fixed top-0 z-20 h-navbar w-full border-b-[1px] border-b-gray-600 bg-myblack text-white md:flex md:items-center md:justify-between`}
