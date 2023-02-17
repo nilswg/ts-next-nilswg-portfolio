@@ -15,18 +15,18 @@ const Ready = () => (
   </span>
 )
 
-const ContactButton = () => {
+const ContactButton = ({ text }: { text: string }) => {
   const loading = useContactStore((state) => state.loading)
   return (
     <button
-      className="flat-btn group flex w-[10rem] justify-center gap-0"
+      className="flat-btn group flex w-[10rem] items-center justify-center gap-0"
       type="submit"
       disabled={loading}
     >
       <input
-        className="cursor-pointer uppercase tracking-[0.5rem]"
+        className="cursor-pointer tracking-[0.5rem]"
         type="submit"
-        value={'send'}
+        value={text}
       />
       {loading ? <Loading /> : <Ready />}
     </button>

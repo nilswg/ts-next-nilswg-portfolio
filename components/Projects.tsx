@@ -1,4 +1,4 @@
-import { useStores } from '@/stores'
+import { Trans, useTranslation } from 'next-i18next'
 import { ReactNode } from 'react'
 import ProjectCard from './ProjectCard'
 import SectionText from './SectionText'
@@ -63,16 +63,24 @@ const projList = [
   // },
 ]
 
-const ProjectsDescription = () => {
-  const lang = useStores((state) => state.lang)
-
-  return lang === 'en' ? (
+const ProjectsTexts = () => {
+  const { t } = useTranslation('home')
+  const projectsTexts = t('projects.texts', { returnObjects: true }) as string[]
+  return (
     <>
-      <p className="animate-fadeIn">There are my side projects here.</p>
-    </>
-  ) : (
-    <>
-      <p className="animate-fadeIn">我有一些個人專案的作品來向你展示。</p>
+      <SectionTitle text={t('projects.title', { defaultValue: 'Projects' })} />
+      <SectionText>
+        {projectsTexts.map((text, i) => (
+          <p key={`projects_text_${i}`}>
+            <Trans
+              i18nKey={text}
+              components={{
+                b: <b />,
+              }}
+            />
+          </p>
+        ))}
+      </SectionText>
     </>
   )
 }
@@ -91,10 +99,7 @@ const Projects = () => {
     >
       {/* <h1 className="absolute text-lg text-white">{4}</h1> */}
       <VerticalFrame>
-        <SectionTitle text={'Projects'} />
-        <SectionText>
-          <ProjectsDescription />
-        </SectionText>
+        <ProjectsTexts />
         <h1 className="tags ml-6">{'<div class="grid">'}</h1>
       </VerticalFrame>
       <div className="flex w-full flex-col items-center self-center">

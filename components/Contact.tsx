@@ -1,40 +1,40 @@
-import { useStores } from '@/stores'
 import { useContactStore } from '@/stores/contact'
 import { useToastsStore } from '@/stores/toasts'
+import { Trans, useTranslation } from 'next-i18next'
 import { ReactNode, useCallback } from 'react'
 import ContactButton from './ContactButton'
 import ContactTopics from './ContactTopics'
 import SectionText from './SectionText'
 import SectionTitle from './SectionTitle'
 
-const EnTexts = () => (
-  <p className="animate-fadeIn animate-delay-[0]">
-    Currently, I'm looking for a <b>full-stack developer</b> position; <b>remote work is preferred</b>. I'm always up for new challenges and enjoy working with
-    companies or people who share my passion for innovation and creativity.
-    Also, if you have any other question or request, don't hesitate to contact me
-    using the form here!
-  </p>
-)
-
-const ChTexts = () => (
-  <p className="animate-fadeIn animate-delay-[0]">
-    目前我正在尋求 <b>前端工程師</b> 的職位，更偏好<b>遠端工作</b>。{' '}
-    自身喜歡有挑戰性的工作內容，很期待能跟擁有熱情與創造力的公司或是團隊一起共事。{' '}
-    還有其他疑問或是需求，也別猶豫歡迎用這邊的表格聯繫我吧!
-  </p>
-)
-
-const LeftSectionTexts = () => {
-  const lang = useStores((state) => state.lang)
-  return <SectionText>{lang === 'en' ? <EnTexts /> : <ChTexts />}</SectionText>
+const ContactTexts = () => {
+  const { t } = useTranslation('home')
+  const contactTexts = t('contact.texts', { returnObjects: true }) as string[]
+  return (
+    <>
+      <SectionTitle text={t('contact.title', { defaultValue: 'Contact' })} />
+      <SectionText>
+        {contactTexts.map((text, i) => (
+          <p key={`contact_text_${i}`}>
+            <Trans
+              i18nKey={text}
+              components={{
+                b: <b />,
+              }}
+            />
+          </p>
+        ))}
+      </SectionText>
+    </>
+  )
 }
 
 const FormFields = () => {
-  const lang = useStores((state) => state.lang)
-  const fontStyle = lang === 'en' ? 'font-outfit' : 'font-zhtw'
+  const { t } = useTranslation('home')
+  const fontStyles = useTranslation('common').t('fontStyles') as string
   return (
     <ul
-      className={`flex flex-col gap-8 py-8 ${fontStyle} text-sm sm:text-lg contact-aufofill`}
+      className={`flex flex-col gap-8 py-8 ${fontStyles} contact-aufofill text-sm sm:text-lg`}
     >
       <li className="flex flex-col gap-8 sm:flex-row sm:gap-2">
         <div className="relative w-full">
@@ -47,7 +47,7 @@ const FormFields = () => {
             required
           />
           <label className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-[50%] peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base">
-            {lang === 'en' ? 'Name' : '姓名'}
+            {t('contact.fields.name') as string}
           </label>
         </div>
         <div className="relative w-full">
@@ -63,7 +63,7 @@ const FormFields = () => {
             htmlFor="email"
             className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-[50%] peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base"
           >
-            {lang === 'en' ? 'Email' : '電子郵件'}
+            {t('contact.fields.email') as string}
           </label>
         </div>
       </li>
@@ -83,49 +83,49 @@ const FormFields = () => {
             htmlFor="email"
             className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base"
           >
-            {lang === 'en' ? 'Message' : '訊息'}
+            {t('contact.fields.message') as string}
           </label>
         </div>
       </li>
       <li className="self-center sm:self-end">
-        <ContactButton />
+        <ContactButton text={t('contact.send', { defaultValue: 'SEND' })} />
       </li>
     </ul>
   )
 }
 
-const dict: {
-  en: { [index: string]: string }
-  ch: { [index: string]: string }
-} = {
-  en: {
-    topic_invalid_enum_value: 'Choose a topic',
-    email_invalid_string: 'Invalid Email Address',
-    name_invalid_string: 'Invalid Name',
-    message_invalid_string: 'Invalid Message',
-    email_too_small: 'Email address too short',
-    name_too_small: 'Name too short',
-    message_too_small: 'Message too short',
-    server_error: 'Internal Server Error',
-    success: 'Your email has been sent successfully!',
-    error: 'Sending email failed',
-  },
-  ch: {
-    topic_invalid_enum_value: '請選擇一下主題',
-    email_invalid_string: '無效的電子郵件地址',
-    name_invalid_string: '無效的姓名',
-    message_invalid_string: '無效的訊息留言',
-    email_too_small: '電子郵件地址過短',
-    name_too_small: '名稱過短',
-    message_too_small: '訊息過短',
-    server_error: '伺服器狀態異常',
-    success: '你的信件已順利寄出!',
-    error: '信件寄送失敗',
-  },
-}
+// const dict: {
+//   en: { [index: string]: string }
+//   ch: { [index: string]: string }
+// } = {
+//   en: {
+//     topic_invalid_enum_value: 'Choose a topic',
+//     email_invalid_string: 'Invalid Email Address',
+//     name_invalid_string: 'Invalid Name',
+//     message_invalid_string: 'Invalid Message',
+//     email_too_small: 'Email address too short',
+//     name_too_small: 'Name too short',
+//     message_too_small: 'Message too short',
+//     server_error: 'Internal Server Error',
+//     success: 'Your email has been sent successfully!',
+//     error: 'Sending email failed',
+//   },
+//   ch: {
+//     topic_invalid_enum_value: '請選擇一下主題',
+//     email_invalid_string: '無效的電子郵件地址',
+//     name_invalid_string: '無效的姓名',
+//     message_invalid_string: '無效的訊息留言',
+//     email_too_small: '電子郵件地址過短',
+//     name_too_small: '名稱過短',
+//     message_too_small: '訊息過短',
+//     server_error: '伺服器狀態異常',
+//     success: '你的信件已順利寄出!',
+//     error: '信件寄送失敗',
+//   },
+// }
 
 const FormFrame = ({ children }: { children: ReactNode }) => {
-  const lang = useStores((state) => state.lang)
+  const { t } = useTranslation('home')
   const setLoading = useContactStore((state) => state.setLoading)
   const addToast = useToastsStore((state) => state.addToast)
   const onSubmit = useCallback(
@@ -164,12 +164,20 @@ const FormFrame = ({ children }: { children: ReactNode }) => {
          * 伺服器回報錯誤，顯示該錯誤
          */
         if (data.errors) {
-          if (data.errors in dict[lang]) {
-            console.log('[ZodError]', data.errors)
-            addToast({ type: 'warn', text: dict[lang][data.errors] })
+          /**
+           * 如果有在字典檔中查找到對應的訊息，就警示訊息，
+           * 反之，表示為例外錯誤狀況，顯示錯誤訊息。
+           */
+          const zodError = t(`contact.errorDict.${data.errors}`, {
+            defaultValue: null,
+          }) as string | null
+
+          if (zodError) {
+            console.log('[ZodError]', zodError)
+            addToast({ type: 'warn', text: zodError })
           } else {
             console.log('[ServerError]', data.errors)
-            addToast({ type: 'error', text: dict[lang]['error'] })
+            addToast({ type: 'error', text: t('contact.errorDict.error') })
           }
           setLoading(false)
           return
@@ -179,7 +187,7 @@ const FormFrame = ({ children }: { children: ReactNode }) => {
          * 正確訊息
          */
         if (data.message === 'ok') {
-          addToast({ type: 'success', text: dict[lang].success })
+          addToast({ type: 'success', text: t('contact.errorDict.success') })
           setLoading(false)
           return
         }
@@ -193,11 +201,11 @@ const FormFrame = ({ children }: { children: ReactNode }) => {
          * 處理前台語法錯誤
          */
         console.log('[ERROR]', error.message)
-        addToast({ type: 'error', text: dict[lang].error })
+        addToast({ type: 'error', text: t('contact.errorDict.error') })
         setLoading(false)
       }
     },
-    [setLoading, lang]
+    [setLoading, t] // <== t: 強制根據語系改變刷新
   )
 
   return (
@@ -221,8 +229,7 @@ const Contact = () => (
     className={`w-full bg-myblack py-[var(--navbar-height)]`}
   >
     <VerticalFrame>
-      <SectionTitle text={'Contact'} />
-      <LeftSectionTexts />
+      <ContactTexts />
       <h1 className="tags pl-6">{'<form>'}</h1>
     </VerticalFrame>
     <FormFrame>

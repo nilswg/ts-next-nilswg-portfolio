@@ -1,15 +1,23 @@
-import { useStores } from '@/stores'
+import { useTranslation } from 'next-i18next'
 
-const Options = [
-  // { type: 'greet', en: 'Say hi to me!', ch: '安安' },
-  { type: 'job', en: 'Job Invitation', ch: '工作邀約' },
-  { type: 'suggest', en: 'Give me suggestion', ch: '給我建議' },
-  { type: 'ask', en: 'Questions for me?', ch: '向我提問' },
-  { type: 'other', en: 'Other', ch: '隨便聊聊' },
-]
+/**
+ * 範例:
+ *
+ * const Options = [
+ *   { id: 'job', en: 'Job Invitation', ch: '工作邀約' },
+ *   { id: 'suggest', en: 'Give me suggestion', ch: '給我建議' },
+ *   { id: 'ask', en: 'Questions for me?', ch: '向我提問' },
+ *   { id: 'other', en: 'Other', ch: '隨便聊聊' },
+ * ]
+ */
 
 const ContactTopics = () => {
-  const lang = useStores((state) => state.lang)
+  const { t } = useTranslation('home')
+
+  const topicOptions = t('contact.topics.options', {
+    returnObjects: true,
+  }) as { id: string; text: string }[]
+
   return (
     <div className={`relative w-full`}>
       <select
@@ -17,18 +25,18 @@ const ContactTopics = () => {
         name="topic"
         placeholder="Topic"
         required
-        defaultValue={lang === 'en' ? 'Choose one' : '請選擇'}
+        defaultValue={t('contact.topics.choose') as string}
       >
         <option disabled className="bg-myblack text-gray-400">
-          {lang === 'en' ? 'Choose one' : '請選擇'}
+          {t('contact.topics.choose') as string}
         </option>
-        {Options.map((option) => (
+        {topicOptions.map((option) => (
           <option
-            key={option.type}
-            value={option.type}
+            key={`contact_topic_${option.id}`}
+            value={option.id}
             className="bg-myblack text-sky-400"
           >
-            {option[lang]}
+            {option.text}
           </option>
         ))}
       </select>
@@ -36,7 +44,7 @@ const ContactTopics = () => {
         htmlFor="topic"
         className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-[50%] peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base"
       >
-        {lang === 'en' ? 'Topic' : '主題'}
+        {t('contact.fields.topic') as string}
       </label>
     </div>
   )

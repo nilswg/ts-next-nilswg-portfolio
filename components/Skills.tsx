@@ -1,4 +1,4 @@
-import { useStores } from '@/stores'
+import { Trans, useTranslation } from 'next-i18next'
 import SectionText from './SectionText'
 import SectionTitle from './SectionTitle'
 import SkillBox from './SkillBox'
@@ -42,55 +42,26 @@ const mySkills = [
   { id: 'C', img: '/img/skills/clang.svg' },
 ]
 
-const EnTexts = () => (
-  <>
-    <p className="animate-fadeIn">
-      Proficient in <b>TypeScript</b> and use <b>React.js</b> and <b>Next.js</b>{' '}
-      to create web applications.
-    </p>{' '}
-    <p>
-      My favored CSS framework is Tailwind. In my personal projects, I've found
-      that utilizing both Tailwind and Sass provides the most comprehensive
-      styling solution.
-    </p>
-    <p className="animate-fadeIn">
-      For the backend, specialize in <b>Node.js</b> and <b>Express.js</b> to
-      build the <b>web</b> server, which solves the I/O-intensive tasks and
-      performance bottlenecks caused by high concurrency.
-    </p>{' '}
-    <p className="animate-fadeIn">
-      For the database system, use <b>Redis</b> for high-performance caching and
-      real-time streaming, as well as <b>PostgreSQL</b> and <b>MongoDB</b> for
-      high availability data access and retrieval.
-    </p>
-  </>
-)
-
-const ChTexts = () => (
-  <>
-    <p className="animate-fadeIn">
-      我能充分運用 <b>TypeScript</b> ，搭配不同技術，如 <b>React.js</b>、
-      <b>Next.js</b>、<b>Angular</b> 構建 Web 應用。
-    </p>{' '}
-    <p className="animate-fadeIn">
-      我最喜歡的 CSS 框架是 Tailwind，在我的個人專案中，我發現同時使用 Tailwind
-      與 Sass，能提供最完整的樣式解決方案。
-    </p>
-    <p className="animate-fadeIn">
-      後端技術，熟悉 <b>Node.js</b> 的運行環境，以 <b>Express.js</b> 構建 Web
-      服務器，解決I/O密集型任務和由高並發帶來的性能瓶頸。
-    </p>{' '}
-    <p className="animate-fadeIn">
-      數據庫系統，使用過 <b>Redis</b> 實作高性能快取與實時串流服務，並以{' '}
-      <b>PostgreSQL</b> 與 <b>MongoDB</b>{' '}
-      提供高可用性，對各種結構的資料存取和檢索。
-    </p>
-  </>
-)
-
-const LeftSectionTexts = () => {
-  const lang = useStores((state) => state.lang)
-  return <SectionText>{lang === 'en' ? <EnTexts /> : <ChTexts />}</SectionText>
+const SkillsTexts = () => {
+  const { t } = useTranslation('home')
+  const skillsTexts = t('skills.texts', { returnObjects: true }) as string[]
+  return (
+    <>
+      <SectionTitle text={t('skills.title', { defaultValue: 'Skills' })} />
+      <SectionText>
+        {skillsTexts.map((text, i) => (
+          <p key={`skills_text_${i}`}>
+            <Trans
+              i18nKey={text}
+              components={{
+                b: <b />,
+              }}
+            />
+          </p>
+        ))}
+      </SectionText>
+    </>
+  )
 }
 
 const SkillsBoard = () => (
@@ -109,8 +80,7 @@ const Skills = () => (
     <div className="w-full 2xl:flex 2xl:flex-row 2xl:justify-center">
       <div className="2xl:flex 2xl:w-2/5 2xl:flex-row 2xl:justify-end">
         <div className="max-w-3xl">
-          <SectionTitle text={'Skills'} />
-          <LeftSectionTexts />
+          <SkillsTexts />
         </div>
       </div>
       <div className="2xl:w-3/5 2xl:pt-10">
