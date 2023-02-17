@@ -1,6 +1,6 @@
 @layer components {
   .flat-btn {
-    @apply my-1 inline-block border border-sky-300 px-8 py-4 text-sm font-bold uppercase tracking-[0.5rem] text-sky-300 no-underline transition-colors duration-300;
+    @apply my-1 inline-block border border-sky-300 px-8 py-4 text-sm font-bold tracking-[0.5rem] text-sky-300 no-underline transition-colors duration-300;
   }
   .flat-btn:hover {
     @apply bg-sky-300 text-gray-900;

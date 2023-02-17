@@ -25,6 +25,22 @@
   font-family: "MSBlack";
   src: url("../public/fonts/MSBlack.ttf");
 }
+@font-face {
+  font-family: "NotoSansTC";
+  src: url("../public/fonts/NotoSansTC-Regular.otf");
+}
+@font-face {
+  font-family: "NotoSansTC-Bold";
+  src: url("../public/fonts/NotoSansTC-Bold.otf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../public/fonts/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("../public/fonts/RobotoCondensed-Regular.ttf");
+}
 @layer base {
   html {
     @apply scroll-smooth;
@@ -36,6 +52,16 @@
 }
 @layer components {
   /* The safelist created by Sass will be deleted in production mode. */
+  /* @apply animate-delay-[2s]; */
+  /* @apply animate-delay-[2.1s]; */
+  /* @apply animate-delay-[2.2s]; */
+  /* @apply animate-delay-[2.3s]; */
+  /* @apply animate-delay-[2.4s]; */
+  /* @apply animate-delay-[2.5s]; */
+  /* @apply animate-delay-[2.6s]; */
+  /* @apply animate-delay-[2.7s]; */
+  /* @apply animate-delay-[2.8s]; */
+  /* @apply animate-delay-[2.9s]; */
   /* @apply animate-delay-[3s]; */
   /* @apply animate-delay-[3.1s]; */
   /* @apply animate-delay-[3.2s]; */
@@ -68,20 +94,10 @@
   /* @apply animate-delay-[5.9s]; */
   /* @apply animate-delay-[6s]; */
   /* @apply animate-delay-[6.1s]; */
-  /* @apply animate-delay-[6.2s]; */
-  /* @apply animate-delay-[6.3s]; */
-  /* @apply animate-delay-[6.4s]; */
-  /* @apply animate-delay-[6.5s]; */
-  /* @apply animate-delay-[6.6s]; */
-  /* @apply animate-delay-[6.7s]; */
-  /* @apply animate-delay-[6.8s]; */
-  /* @apply animate-delay-[6.9s]; */
-  /* @apply animate-delay-[7s]; */
-  /* @apply animate-delay-[7.1s]; */
 }
 @layer components {
   .flat-btn {
-    @apply my-1 inline-block border border-sky-300 px-8 py-4 text-sm font-bold uppercase tracking-[0.5rem] text-sky-300 no-underline transition-colors duration-300;
+    @apply my-1 inline-block border border-sky-300 px-8 py-4 text-sm font-bold tracking-[0.5rem] text-sky-300 no-underline transition-colors duration-300;
   }
   .flat-btn:hover {
     @apply bg-sky-300 text-gray-900;
