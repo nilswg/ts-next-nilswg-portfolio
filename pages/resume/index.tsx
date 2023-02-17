@@ -9,7 +9,7 @@ const DownloadResumeButton = () => {
   const { locale } = useRouter()
   return (
     <a
-      href={`/api/getResume?locale=${locale}`}
+      href={`/api/resume/download?locale=${locale}`}
       className="absolute top-2 left-4 z-[100] mb-[1.5rem] inline-block rounded-full px-4 py-4 font-medium shadow-lg duration-300 hover:bg-[#403A3A] hover:text-[#FAFAFA]"
     >
       <BiDownload />

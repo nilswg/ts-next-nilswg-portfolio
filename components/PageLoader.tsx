@@ -34,6 +34,7 @@ const PageLoader = () => {
    */
   return (
     <div
+      id="pageloader"
       className={`
         fixed top-0 flex h-screen w-full items-center justify-center bg-black
         ${
