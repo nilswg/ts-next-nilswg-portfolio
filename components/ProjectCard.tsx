@@ -25,11 +25,10 @@ const ProjectCard = ({
     <div className="group relative h-[210px] w-[280px] overflow-hidden rounded-md shadow-card sm:h-[300px] sm:w-[400px]">
       <div className="relative h-[210px] w-full sm:h-[300px]">
         <Image
-          className=""
+          className="object-fill"
           src={preview}
           alt={`picture of ${title}`}
           loading="lazy"
-          objectFit="fill"
           fill
         />
       </div>

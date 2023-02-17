@@ -1,7 +1,6 @@
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import type { ReactNode } from 'react'
-
-import Head from 'next/head'
 import Footer from './Footer'
 import NavBar from './Navbar'
 import PageLoader from './PageLoader'
@@ -31,9 +30,8 @@ const getParsedPathName = (url: string) => {
   return res
 }
 
-const layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   const router = useRouter()
-
   let pageName = getParsedPathName(router.pathname)
 
   return (
@@ -43,9 +41,7 @@ const layout = ({ children }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <main className="w-full">
-        {children}
-      </main>
+      <main className="w-full">{children}</main>
       <Footer />
       {<PageLoader />}
       {<Toasts />}
@@ -54,4 +50,4 @@ const layout = ({ children }: LayoutProps) => {
   )
 }
 
-export default layout
+export default Layout
