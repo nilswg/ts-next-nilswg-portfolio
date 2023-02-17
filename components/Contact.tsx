@@ -32,6 +32,14 @@ const ContactTexts = () => {
 const FormFields = () => {
   const { t } = useTranslation('home')
   const fontStyles = useTranslation('common').t('fontStyles') as string
+  const message = useContactStore((state) => state.message)
+  const setMessage = useContactStore((state) => state.setMessage)
+  const onMessageChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setMessage(e.target.value)
+    },
+    [setMessage]
+  )
   return (
     <ul
       className={`flex flex-col gap-8 py-8 ${fontStyles} contact-aufofill text-sm sm:text-lg`}
@@ -73,11 +81,14 @@ const FormFields = () => {
       <li>
         <div className="relative w-full">
           <textarea
+            id="contact-message"
             name="message"
             className="peer h-28 w-full rounded-md border-2 border-sky-600 bg-transparent px-4 py-4 text-sky-400 placeholder-transparent outline-none placeholder-shown:text-gray-400 xs:h-32 sm:h-40"
             placeholder={'Message'}
             minLength={10}
             required
+            value={message}
+            onChange={onMessageChange}
           ></textarea>
           <label
             htmlFor="email"
@@ -94,39 +105,10 @@ const FormFields = () => {
   )
 }
 
-// const dict: {
-//   en: { [index: string]: string }
-//   ch: { [index: string]: string }
-// } = {
-//   en: {
-//     topic_invalid_enum_value: 'Choose a topic',
-//     email_invalid_string: 'Invalid Email Address',
-//     name_invalid_string: 'Invalid Name',
-//     message_invalid_string: 'Invalid Message',
-//     email_too_small: 'Email address too short',
-//     name_too_small: 'Name too short',
-//     message_too_small: 'Message too short',
-//     server_error: 'Internal Server Error',
-//     success: 'Your email has been sent successfully!',
-//     error: 'Sending email failed',
-//   },
-//   ch: {
-//     topic_invalid_enum_value: '請選擇一下主題',
-//     email_invalid_string: '無效的電子郵件地址',
-//     name_invalid_string: '無效的姓名',
-//     message_invalid_string: '無效的訊息留言',
-//     email_too_small: '電子郵件地址過短',
-//     name_too_small: '名稱過短',
-//     message_too_small: '訊息過短',
-//     server_error: '伺服器狀態異常',
-//     success: '你的信件已順利寄出!',
-//     error: '信件寄送失敗',
-//   },
-// }
-
 const FormFrame = ({ children }: { children: ReactNode }) => {
-  const { t } = useTranslation('home')
+  const { t } = useTranslation('common')
   const setLoading = useContactStore((state) => state.setLoading)
+  const setMessage = useContactStore((state) => state.setMessage)
   const addToast = useToastsStore((state) => state.addToast)
   const onSubmit = useCallback(
     async (e: React.SyntheticEvent<HTMLFormElement>) => {
@@ -168,7 +150,7 @@ const FormFrame = ({ children }: { children: ReactNode }) => {
            * 如果有在字典檔中查找到對應的訊息，就警示訊息，
            * 反之，表示為例外錯誤狀況，顯示錯誤訊息。
            */
-          const zodError = t(`contact.errorDict.${data.errors}`, {
+          const zodError = t(`errorDict.${data.errors}`, {
             defaultValue: null,
           }) as string | null
 
@@ -177,7 +159,7 @@ const FormFrame = ({ children }: { children: ReactNode }) => {
             addToast({ type: 'warn', text: zodError })
           } else {
             console.log('[ServerError]', data.errors)
-            addToast({ type: 'error', text: t('contact.errorDict.error') })
+            addToast({ type: 'error', text: t('errorDict.error') })
           }
           setLoading(false)
           return
@@ -187,8 +169,10 @@ const FormFrame = ({ children }: { children: ReactNode }) => {
          * 正確訊息
          */
         if (data.message === 'ok') {
-          addToast({ type: 'success', text: t('contact.errorDict.success') })
+          addToast({ type: 'success', text: t('errorDict.success') })
           setLoading(false)
+          // clear message field
+          setMessage('')
           return
         }
 
@@ -201,11 +185,11 @@ const FormFrame = ({ children }: { children: ReactNode }) => {
          * 處理前台語法錯誤
          */
         console.log('[ERROR]', error.message)
-        addToast({ type: 'error', text: t('contact.errorDict.error') })
+        addToast({ type: 'error', text: t('errorDict.error') })
         setLoading(false)
       }
     },
-    [setLoading, t] // <== t: 強制根據語系改變刷新
+    [setLoading, setMessage, t] // <== t: 強制根據語系改變刷新
   )
 
   return (

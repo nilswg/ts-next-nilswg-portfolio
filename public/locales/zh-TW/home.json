@@ -87,7 +87,9 @@
   },
   "contact": {
     "title": "聯絡我",
-    "texts": [],
+    "texts": [
+      "目前我正在尋求 <b>前端工程師</b> 的職位，更偏好<b>遠端工作</b>。自身喜歡有挑戰性的工作內容，很期待能跟擁有熱情與創造力的公司或是團隊一起共事。還有其他疑問或是需求，也別猶豫歡迎用這邊的表格聯繫我吧!"
+    ],
     "fields": {
       "name": "姓名",
       "email": "電子郵件",
@@ -115,18 +117,6 @@
         }
       ]
     },
-    "send": "寄送訊息",
-    "errorDict": {
-      "topic_invalid_enum_value": "請選擇訊息主題",
-      "email_invalid_string": "無效的電子郵件地址22",
-      "name_invalid_string": "無效的姓名",
-      "message_invalid_string": "無效的訊息留言",
-      "email_too_small": "電子郵件地址過短",
-      "name_too_small": "名稱過短",
-      "message_too_small": "訊息過短",
-      "server_error": "伺服器狀態異常",
-      "success": "你的信件已順利寄出!",
-      "error": "信件寄送失敗"
-    }
+    "send": "寄送訊息"
   }
 }

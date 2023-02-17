@@ -87,7 +87,9 @@
   },
   "contact": {
     "title": "Contact",
-    "texts": [],
+    "texts": [
+      "Currently, I'm looking for a <b>full-stack developer</b> position; <b>remote work is preferred</b>. I'm always up for new challenges and enjoy working with companies or people who share my passion for innovation and creativity. Also, if you have any other question or request, don't hesitate to contact me using the form here!"
+    ],
     "fields": {
       "name": "Name",
       "email": "Email",
@@ -115,18 +117,6 @@
         }
       ]
     },
-    "send": "SEND",
-    "errorDict": {
-      "topic_invalid_enum_value": "Choose a topic",
-      "email_invalid_string": "Invalid Email Address",
-      "name_invalid_string": "Invalid Name",
-      "message_invalid_string": "Invalid Message",
-      "email_too_small": "Email address too short",
-      "name_too_small": "Name too short",
-      "message_too_small": "Message too short",
-      "server_error": "Internal Server Error",
-      "success": "Your email has been sent successfully!",
-      "error": "Sending email failed"
-    }
+    "send": "SEND"
   }
 }

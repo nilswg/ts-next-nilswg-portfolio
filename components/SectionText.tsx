@@ -7,7 +7,7 @@ type Props = {
 
 const SectionText = ({ children }: Props) => {
   const { locale } = useRouter()
-  const fontStyle = locale === 'en' ? 'font-outfit' : 'font-zhtw'
+  const fontStyle = locale === 'zh-TW' ? 'font-zhtw' : 'font-outfit'
   return (
     <>
       <h1 className="tags ml-6">{'<p>'}</h1>

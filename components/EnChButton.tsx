@@ -1,4 +1,5 @@
 import cookie from 'js-cookie'
+import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 type LangInputProps = {
   className: string
@@ -57,14 +58,14 @@ type Props = {
 }
 
 const EnChButton = ({ className, inputProps }: Props) => {
-  const { locale } = useRouter()
+  const { t } = useTranslation('common')
   return (
     <label
       className={`flex cursor-pointer items-center gap-1 py-2 px-2 font-russon ${className}`}
     >
-      <span>{locale === 'en' ? 'EN' : '英'}</span>
+      <span>{t('nav.en', { defaultValue: 'EN' })}</span>
       <LangInput {...inputProps} />
-      <span>{locale === 'en' ? 'CH' : '中'}</span>
+      <span>{t('nav.ch', { defaultValue: 'CH' })}</span>
     </label>
   )
 }
