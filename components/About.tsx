@@ -8,8 +8,6 @@ const AboutTexts = () => {
   const { t } = useTranslation('home')
   const aboutTexts = t('about.texts', { returnObjects: true }) as Array<string>
 
-  console.log('AboutTexts')
-
   return (
     <div>
       <SectionTitle text={t('about.title', { defaultValue: 'About' })} />

@@ -16,11 +16,10 @@ export default async function handler(
      */
     const result = messageSchema.safeParse(req.body)
     if (!result.success) {
-      console.log('[ZOD ERROR]', JSON.stringify(result.error.issues))
-
       const firstIssue = result.error.issues[0]
       const zodErrStr = firstIssue.path[0] + '_' + firstIssue.code
 
+      // console.log('[ZOD ERROR]', JSON.stringify(result.error.issues))
       console.log('[ZOD ERROR] zodErrStr', zodErrStr)
 
       res.status(400).json({ message: null, errors: zodErrStr })
