@@ -5,9 +5,7 @@ import LettersZone from './LettersZone'
 import OpeningButton from './OpeningButton'
 import SocialLinks from './SocialLinks'
 
-
 const Opening = () => {
-
   const { t } = useTranslation('home')
   const letters = t('openings.letters', { returnObjects: true }) as string[]
   const typewriter = t('openings.typewriter', {
@@ -15,7 +13,7 @@ const Opening = () => {
   }) as string[]
 
   /**
-   * 強迫語系切換時刷新
+   * 強迫 Typewriter 於語系切換時刷新
    */
   const MyTypeWriter = useCallback(
     () => (
@@ -75,7 +73,7 @@ const Opening = () => {
               {'<p>'}
             </h1>
             <div className="ml-9 font-orbitron text-xs tracking-widest text-gray-400 sm:text-lg md:text-2xl">
-              <MyTypeWriter/>
+              <MyTypeWriter />
             </div>
             <h1 className="tags ml-6 animate-fadeIn animate-delay-[3s] ">
               {'</p>'}
