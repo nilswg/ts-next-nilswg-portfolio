@@ -1,10 +1,6 @@
 {
   "openings": {
-    "letters": [
-      "您好！",
-      "我是 Nilson Weng,",
-      "是一位全端工程師"
-    ],
+    "letters": ["您好！", "我是 Nilson Weng,", "是一位全端工程師"],
     "typewriter": [
       "嫻熟的TypeScript開發者",
       "專精於Node.js, React, Next.js",
@@ -34,14 +30,8 @@
       "jobtitle": "全端工程師",
       "location": "台中市",
       "jobposition": "資深工程師",
-      "begintime": [
-        2021,
-        12
-      ],
-      "endtime": [
-        2022,
-        9
-      ],
+      "begintime": [2021, 12],
+      "endtime": [2022, 9],
       "texts": [
         "協助企業打造新一代一致性 MES 與 ERP 系統",
         "協助架構師維護底層共用模組與工具，並以 GitLab 版控",
@@ -59,14 +49,8 @@
       "jobtitle": "遊戲程式設計師",
       "jobposition": "助理工程師",
       "location": "台中市",
-      "begintime": [
-        2019,
-        10
-      ],
-      "endtime": [
-        2021,
-        3
-      ],
+      "begintime": [2019, 10],
+      "endtime": [2021, 3],
       "texts": [
         "開發基於 canvas 2d 與 webgl 技術的網頁遊戲項目",
         "擁有不同瀏覽器與移動裝置的產品開發與維護經驗",
@@ -83,17 +67,9 @@
       "jobposition": "學士",
       "jobtitle": "資訊工程學系(資電組) 畢業",
       "location": "台中市",
-      "begintime": [
-        2013,
-        7
-      ],
-      "endtime": [
-        2017,
-        1
-      ],
-      "texts": [
-        "同校建築系學生，轉學進入資工系二年級就讀"
-      ]
+      "begintime": [2013, 7],
+      "endtime": [2017, 1],
+      "texts": ["同校建築系學生，轉學進入資工系二年級就讀"]
     }
   ],
   "skills": {
@@ -107,9 +83,7 @@
   },
   "projects": {
     "title": "個人專案",
-    "texts": [
-      "我有一些個人專案的作品來向你展示。"
-    ]
+    "texts": ["我有一些個人專案的作品來向你展示。"]
   },
   "contact": {
     "title": "聯絡我",
