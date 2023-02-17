@@ -10,7 +10,7 @@ const SectionTitle = ({ text }: Props) => {
   const fontStyles =
     locale === 'en'
       ? /*tw:*/ 'font-russon font-normal'
-      : /*tw:*/ 'font-notosans_black mb-3 font-black'
+      : /*tw:*/ 'font-notosans_bold mb-3'
   return (
     <>
       <h1 className="tags ml-6 pt-10">{'<h1>'}</h1>

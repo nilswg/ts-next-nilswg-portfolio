@@ -32,6 +32,26 @@
   src: url('../public/fonts/MSBlack.ttf');
 }
 
+@font-face {
+  font-family: 'NotoSansTC';
+  src: url('../public/fonts/NotoSansTC-Regular.otf');
+}
+
+@font-face {
+  font-family: 'NotoSansTC-Bold';
+  src: url('../public/fonts/NotoSansTC-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../public/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'RobotoCondensed';
+  src: url('../public/fonts/RobotoCondensed-Regular.ttf');
+}
+
 @layer base {
   html {
     @apply scroll-smooth;

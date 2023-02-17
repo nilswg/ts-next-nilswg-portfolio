@@ -19,7 +19,11 @@ module.exports = withAnimations({
         orbitron: ['Orbitron'],
         play: ['Play'],
         outfit: ['Outfit'],
-        zhtw: ['Play', 'MSBlack'],
+        zhtw: ['Roboto', 'MSBlack'],
+        notosans: ['NotoSansTC'],
+        notosans_bold: ['NotoSansTC-Bold'],
+        roboto: ['Roboto'],
+        roboto_condensed: ['RobotoCondensed']
       },
       height: {
         navbar: 'var(--navbar-height)',
@@ -64,7 +68,7 @@ module.exports = withAnimations({
       },
       boxShadow: {
         card: '5px 5px 20px rgba(75, 85, 99, 1)'
-      }
+      },
     },
   },
   plugins: [],
