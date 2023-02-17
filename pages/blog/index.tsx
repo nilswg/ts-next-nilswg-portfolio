@@ -1,3 +1,22 @@
+import { NextPageContext } from 'next'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+const UnderConstructionTexts = () => {
+  const { t } = useTranslation('common')
+
+  return (
+    <>
+      <p className="mt-8 text-4xl font-bold capitalize tracking-wide text-orange-500">
+        {t('website_under_construction')}!
+      </p>
+      <p className="mt-4 text-xl uppercase text-orange-500">
+        {t('coming_soon')}!!
+      </p>
+    </>
+  )
+}
+
 const Blog = () => (
   <div className="flex min-h-screen w-full flex-col items-center justify-between">
     <div className="flex flex-1 flex-col items-center justify-center px-4 text-center lg:px-0 xl:w-1/2">
@@ -210,10 +229,7 @@ const Blog = () => (
           fill="#cbcbcb"
         ></path>
       </svg>
-      <p className="mt-8 text-4xl font-bold capitalize tracking-wide text-orange-500">
-        Website under Construction!
-      </p>
-      <p className="mt-4 text-xl uppercase text-orange-500">Coming soon!!</p>
+      <UnderConstructionTexts />
     </div>
     {/* <div className="w-full py-4 border-t border-gray-300">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center text-orange-600 text-sm md:space-x-8 space-y-1 md:space-y-0">
@@ -238,3 +254,12 @@ const Blog = () => (
 )
 
 export default Blog
+
+export async function getStaticProps(ctx: NextPageContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(ctx.locale as string, ['common'])),
+    },
+    revalidate: false
+  }
+}
