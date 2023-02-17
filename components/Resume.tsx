@@ -151,9 +151,11 @@ const Resume = () => {
                 <BiEnvelope className="mr-1 text-[1.2rem]" />{' '}
                 nilsonweng@gmail.com
               </span>
-              <span className="inline-flex items-center text-[.875rem] text-[#403A3A]">
-                <BiPhone className="mr-1 text-[1.2rem]" /> 0988-572-252
-              </span>
+              {process.env.NODE_ENV === 'development' && (
+                <span className="inline-flex items-center text-[.875rem] text-[#403A3A]">
+                  <BiPhone className="mr-1 text-[1.2rem]"/> 0988-572-252
+                </span>
+              )}
             </div>
           </section>
 

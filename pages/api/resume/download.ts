@@ -1,25 +1,35 @@
 import { createReadStream } from 'fs'
 import { stat } from 'fs/promises'
-import moment from 'moment'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  message: string
+  errors?: string
+  message?: string
 }
+
+const auth = process.env['RESUME_DOWNLOAD_PASSWORD']
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-
-  const { locale = null } = req.query
+  const { locale = null, password = null } = req.query
   if (!locale || Array.isArray(locale)) {
-    res.status(400).json({ message: 'wrong of no locale provided' })
+    res.status(400).json({ errors: 'locale_invalid_string' })
+    return
+  }
+
+  if (!password || Array.isArray(password)) {
+    res.status(400).json({ errors: 'password_invalid_string' })
+    return
+  }
+
+  if (password !== auth) {
+    res.status(400).json({ errors: 'wrong_password' })
     return
   }
 
   const lang = locale === 'zh-TW' ? 'ch' : 'en'
-  const date = moment().utc().format('YYYY-MM-DD');
 
   console.log('Start Download Resume')
   // your file content here
@@ -40,7 +50,9 @@ export default async function handler(
     if (hasMessage(error)) {
       console.log(error.message)
     }
-    res.status(400).json({ message: 'save file error.' })
+    res
+      .status(500)
+      .json({ message: 'Sending resume failed', errors: 'server_error' })
   }
 }
 

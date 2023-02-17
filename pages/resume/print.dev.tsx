@@ -17,7 +17,7 @@ const ResumePage = () => {
 
 export default ResumePage
 
-export async function getServerSideProps(ctx: NextPageContext) {
+export async function getStaticProps(ctx: NextPageContext) {
   return {
     props: {
       ...(await serverSideTranslations(ctx.locale as string, [
@@ -26,5 +26,6 @@ export async function getServerSideProps(ctx: NextPageContext) {
         'resume',
       ])),
     },
+    revalidate: false
   }
 }
