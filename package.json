@@ -10,12 +10,14 @@
     "cy:open": "npx cypress open"
   },
   "dependencies": {
+    "i18next": "^22.4.10",
     "js-cookie": "^3.0.1",
     "moment": "^2.29.4",
     "next": "13.0.6",
-    "next-i18next": "13.1.5",
+    "next-i18next": "^13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^12.1.5",
     "react-icons": "4.7.1",
     "typewriter-effect": "^2.19.0",
     "zod": "^3.20.2",
