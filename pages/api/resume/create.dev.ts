@@ -1,16 +1,18 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { unlink } from 'fs/promises'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
   message: string
-  locale?:string
+  locale?: string
 }
+
+const password = process.env['RESUME_DOWNLOAD_PASSWORD']
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-
   const { locale = null } = req.query
   if (!locale || Array.isArray(locale)) {
     res.status(400).json({ message: 'wrong of no locale provided' })
@@ -33,7 +35,16 @@ export default async function handler(
     try {
       const genPDF = (await import('@/puppeteer/genPDF')).default
 
-      await genPDF(url, filename)
+      const { encrypt } = await import('@/puppeteer/qpdf')
+
+      if (!password) {
+        res.status(400).json({ message: 'password is empty' })
+        return
+      }
+      const tempPDF = filename.split('.pdf')[0] + '_temp'
+      await genPDF(url, tempPDF)
+      await encrypt(tempPDF, filename, password!)
+      await unlink(tempPDF); // 刪除 tempPDF
 
       res.status(200).json({ message: 'Resume created successfully.', locale })
     } catch (error) {

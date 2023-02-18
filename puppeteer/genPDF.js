@@ -1,10 +1,17 @@
-import { launch } from 'puppeteer'
+// @ts-check
+
+const path = require('path')
+const { launch } = require('puppeteer')
+
 /**
  * genPDF
  * url  ex: http://localhost:3000/
  * path ex: './myfile.pdf'
+ *
+ * @param {string} url
+ * @param {string} path
  */
-async function genPDF(url: string, path: string) {
+async function genPDF(url, path) {
   console.log('url', url)
   console.log('path', path)
   try {
@@ -14,10 +21,8 @@ async function genPDF(url: string, path: string) {
     await page.setViewport({ width: 794, height: 1122, deviceScaleFactor: 2 })
 
     await page.goto(url, {
-      waitUntil: 'networkidle2',
+      waitUntil: 'networkidle0',
     })
-
-    await delay(2000) //字型載入比較久，多等一下。
 
     await page.emulateMediaType('screen')
 
@@ -51,12 +56,11 @@ async function genPDF(url: string, path: string) {
   }
 }
 
-function delay(ms: number) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(true)
-    }, ms)
-  })
+if (require.main === module) {
+  genPDF(
+    'http://localhost:3000/resume/print',
+    path.join(__dirname, './document.pdf')
+  )
 }
 
-export default genPDF
+module.exports = genPDF
