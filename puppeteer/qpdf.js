@@ -60,8 +60,9 @@ if (require.main === module) {
       const password = '1234'
       await encrypt(src, dist, password)
       console.log('encrypt successfully.')
-    } catch (error) {
-      console.log(error?.message)
+    } catch (e) {
+      throw e;
     }
   })()
 }
+
