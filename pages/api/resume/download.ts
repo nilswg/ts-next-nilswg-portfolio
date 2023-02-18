@@ -1,6 +1,7 @@
 import { createReadStream } from 'fs'
 import { stat } from 'fs/promises'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import path from 'path'
 
 type Data = {
   errors?: string
@@ -35,7 +36,7 @@ export default async function handler(
   // your file content here
   try {
     const resumeName = `resume_${lang}.pdf`
-    const resumePath = `./public/pdf/${resumeName}`
+    const resumePath = path.join(process.cwd(), `public/pdf/${resumeName}`)
     const readStream = await createReadStream(resumePath)
     const filestat = await stat(resumePath)
 
@@ -49,6 +50,8 @@ export default async function handler(
   } catch (error: unknown) {
     if (hasMessage(error)) {
       console.log(error.message)
+    } else {
+      console.log(error)
     }
     res
       .status(500)
