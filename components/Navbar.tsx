@@ -1,7 +1,7 @@
 import { useStores } from '@/stores'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import EnChButton from './EnChButton'
 import { HorizontalFrame, VerticalFrame } from './NavbarFrames'
 import SocialLinks from './SocialLinks'
@@ -17,6 +17,10 @@ const Navbar = () => {
   const switchMenuOpen = useStores((state) => state.switchMenuOpen)
 
   const { t } = useTranslation('common')
+
+  /**
+   * 語系切換時，更新 Navbar 欄位名稱
+   */
   const navItems = useMemo(
     () => [
       { href: '/', text: t('nav.home') },
@@ -26,6 +30,14 @@ const Navbar = () => {
     ],
     [t]
   )
+
+  /**
+   * 使用於語系切換時，重置 Menu 狀態為關閉。
+   * Mobile 時，切換語系時，會等待語系切換完畢後，才收起Menu
+   */
+  useEffect(() => {
+    useStores.setState({ isMenuOpen: false })
+  }, [t])
 
   return (
     <header
