@@ -18,7 +18,7 @@ const SkillBox = ({ id, img }: Props) => {
           height={64}
           loading="lazy"
         ></Image>
-        <p className="text-center font-orbitron text-sm font-medium leading-tight tracking-widest  text-gray-400 opacity-100 transition-colors ease-in-out group-hover:text-gray-200 sm:text-base">
+        <p className="text-center font-play text-lg text-gray-400 opacity-100 transition-colors ease-in-out group-hover:text-gray-200 sm:text-xl">
           {id}
         </p>
       </div>

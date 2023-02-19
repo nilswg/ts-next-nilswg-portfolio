@@ -72,7 +72,7 @@ const Opening = () => {
             <h1 className="tags ml-6 animate-fadeIn animate-delay-[3s] ">
               {'<p>'}
             </h1>
-            <div className="ml-9 font-orbitron text-xs tracking-widest text-gray-400 sm:text-lg md:text-2xl">
+            <div className="ml-9 font-orbitron text-xs tracking-wide text-gray-400 sm:text-lg md:text-2xl">
               <MyTypeWriter />
             </div>
             <h1 className="tags ml-6 animate-fadeIn animate-delay-[3s] ">
