@@ -27,6 +27,7 @@ const ContactButton = ({ text }: { text: string }) => {
         className="cursor-pointer tracking-[0.5rem]"
         type="submit"
         value={text}
+        disabled={loading}
       />
       {loading ? <Loading /> : <Ready />}
     </button>
