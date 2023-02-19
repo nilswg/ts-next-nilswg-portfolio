@@ -15,63 +15,6 @@ const Circle = () => (
   <span className="inline-block h-[5px] w-[5px] items-center rounded-full bg-[#403A3A]"></span>
 )
 
-// const EnTexts = () => (
-//   <>
-//     <p className="animate-fadeIn">
-//       As a highly motivated and skilled <b>full-stack web developer</b> with{' '}
-//       <b>2.5 years</b> of development experience.
-//     </p>
-//     <br />
-//     <p>
-//       I have a proven track record of delivering high-quality results, including{' '}
-//       <b>six casino games</b> and large-scale <b>business ERP systems</b>.
-//     </p>
-//     <br />
-//     <p>
-//       My extensive knowledge of <b>TypeScript</b>, <b>Node.js</b>, <b>React</b>,{' '}
-//       <b>Next.js</b>, <b>Angular</b>, <b>Express</b>, <b>Vite</b>, and other
-//       cutting-edge web technologies has allowed me to solve any problems in the
-//       field.
-//     </p>
-//     <br />
-//     <p>
-//       Not only am I a self-taught expert, but I also enjoy sharing my knowledge
-//       with others. I had introduced new dev-tools to my previous work team, such
-//       as Prettier, to improve the quality and readability of the code. In my
-//       personal Discord group, I serve as the main speaker and have already
-//       helped <b>two</b> group members secure front-end developer positions.
-//     </p>
-//   </>
-// )
-
-// const ChTexts = () => (
-//   <>
-//     <p className="animate-fadeIn">
-//       我是一位充滿熱情且技術嫻熟的全端網頁開發人員，我擁有2.5年的程式開發經驗。
-//     </p>{' '}
-//     <br />
-//     <p>
-//       在過往參與的項目中，我的專業實力備受團隊成員肯定，擁有交付高質量結果的良好記錄。
-//       我曾參與過多種開發項目，包括<b>六款博弈遊戲</b>和
-//       <b>大規模的企業ERP系統</b>
-//     </p>
-//     <br />
-//     <p>
-//       專業技術上，我對 <b>TypeScript</b>
-//       <b>Node.js</b>、<b>React</b>、<b>Next.js</b>、<b>Angular</b>、
-//       <b>Express</b>、<b>Vite</b>{' '}
-//       和其他前沿網頁技術的深入了解，使我能夠快速有效地解決任何遇到的問題。
-//     </p>
-//     <br />
-//     <p>
-//       我不僅善於自我學習，還喜歡與他人分享我的知識和經驗。{' '}
-//       我曾在先前工作團隊引進了新的開發工具，例如導入 <b>Prettier</b>{' '}
-//       以提高代碼的質量和可讀性。
-//       在我個人Discord群組中，我是主要演講者，已經幫助兩名群組成員成為前端開發人員。
-//     </p>
-//   </>
-// )
-
 type ExperienceProps = {
   id: string
   img: string
@@ -153,7 +96,7 @@ const Resume = () => {
               </span>
               {process.env.NODE_ENV === 'development' && (
                 <span className="inline-flex items-center text-[.875rem] text-[#403A3A]">
-                  <BiPhone className="mr-1 text-[1.2rem]"/> 0988-572-252
+                  <BiPhone className="mr-1 text-[1.2rem]" /> 0988-572-252
                 </span>
               )}
             </div>

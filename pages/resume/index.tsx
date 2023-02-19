@@ -5,17 +5,27 @@ import { NextPageContext } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRouter } from 'next/router'
-import { ReactNode, useCallback } from 'react'
+import { ReactNode, useCallback, useState } from 'react'
 import { BiDownload } from 'react-icons/bi'
+import { CgSpinner } from 'react-icons/cg'
+
+const Loading = () => (
+  <span className="w-4 h-4 bg-[#403A3A]">
+    <CgSpinner className={`animate-[spin_1s_linear_infinite] text-[#403A3A]`} />
+  </span>
+)
 
 const DownloadResumeButton = () => {
   const { locale } = useRouter()
+  const [loading, setLoading] = useState(false)
   const addToast = useToastsStore((s) => s.addToast)
 
   const { t } = useTranslation('common')
   const onClick = useCallback(async () => {
     const password = prompt(t('enter_password') + '?')
     if (!password) return
+
+    setLoading(true)
 
     const data = await fetch(
       `/api/resume/download?locale=${locale}&password=${password}`
@@ -33,15 +43,18 @@ const DownloadResumeButton = () => {
         text: t(`errorDict.${data.errors}`),
       })
     }
+
+    setLoading(false)
   }, [addToast, t])
 
   return (
-    <a
+    <button
       onClick={onClick}
-      className="absolute top-2 left-4 z-[100] mb-[1.5rem] inline-block rounded-full px-4 py-4 font-medium shadow-lg duration-300 hover:bg-[#403A3A] hover:text-[#FAFAFA]"
+      disabled={loading}
+      className="absolute top-2 left-4 z-[100] mb-[1.5rem] inline-block rounded-full px-4 py-4 font-medium shadow-lg duration-300 hover:bg-[#403A3A] disabled:bg-gray-200 hover:text-[#FAFAFA]"
     >
-      <BiDownload />
-    </a>
+      {loading ? <Loading /> : <BiDownload />}
+    </button>
   )
 }
 
@@ -75,6 +88,6 @@ export async function getStaticProps(ctx: NextPageContext) {
         'resume',
       ])),
     },
-    revalidate: false
+    revalidate: false,
   }
 }
