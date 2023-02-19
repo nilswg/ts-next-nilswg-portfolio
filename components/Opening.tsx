@@ -48,14 +48,14 @@ const Opening = () => {
             </h1>
             <LettersZone
               key="letters_hi"
-              className="ml-9 inline-block font-russon text-xl font-normal text-white xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+              className="mb-1 ml-9 inline-block font-russon text-xl font-normal text-white xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
               letters={letters[0]}
               startIdx={20}
             />
             <br />
             <LettersZone
               key="letters_username"
-              className="ml-9 inline-block font-russon text-xl font-normal text-white xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+              className="mb-1 ml-9 inline-block font-russon text-xl font-normal text-white xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
               letters={letters[1]}
               startIdx={25}
             />
