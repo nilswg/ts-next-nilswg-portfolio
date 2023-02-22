@@ -91,7 +91,7 @@ const FormFields = () => {
             onChange={onMessageChange}
           ></textarea>
           <label
-            htmlFor="email"
+            htmlFor="message"
             className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base"
           >
             {t('contact.fields.message') as string}
