@@ -46,3 +46,13 @@ LINE_NOTIFY_TOKEN=yd8u6TmdC6e7CNOwz8aGV3ONHDjulTrnSJhXRZujboq
 Of course, you need a Line Account, and create a group to receive message.
 
 <br>
+
+## 📚 Read More 
+
+Some Notion notes are here, but only in Chinese.
+
+這裡有我用 Notion 整理出的開發重點
+
+<a href="https://gratis-number-79a.notion.site/Nilswg-Portfolio-6d8e7a9a16ef44a7bce49745f31781af"> Notion Notes </a>
+
+
