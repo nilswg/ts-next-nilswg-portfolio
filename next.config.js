@@ -34,5 +34,5 @@ function allowDevPage(config) {
 if (require.main === module) {
   process.env.NODE_ENV = "development"
   const res = allowDevPage(['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'])
-  console.log(res);
+  // console.log(res);
 }
