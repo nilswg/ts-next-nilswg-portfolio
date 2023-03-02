@@ -12,7 +12,7 @@
     "title": "關於我",
     "texts": [
       "我是一位知識豐富且技術嫻熟的<b>全端工程師</b>，目前擁有<b>2.5 年</b>的開發經驗。",
-      "在我的職涯中，<b>TypeScript</b> 是一直使用且深入的語言。我曾使用它配合 <b>Pixi.js</b> 和 <b>Babylon.js</b> 製作 <b>2D Canvas</b> 與 <b>3D WebGL</b> 動畫，總共完成了<b>六款博弈遊戲</b>。也曾經參與<b>20人以上</b>的開發團隊，使用 <b>Angular</b> 構建<b>大型的商業ERP系統</b>。",
+      "在我的職涯中，<b>TypeScript</b> 是一直使用且深入的語言。我曾參與<b>20人以上</b>的開發團隊使用 <b>Angular</b> 構建<b>大型的商業ERP系統</b>，也使用它配合 <b>Pixi.js</b> 和 <b>Babylon.js</b> 製作 <b>2D Canvas</b> 與 <b>3D WebGL</b> 動畫。",
       "個人空閒之餘，也喜歡使用 <b>TypeScript</b> 搭配 <b>Node.js</b>、<b>React</b>、<b>Express</b>、<b>Vite</b> 來探索尖端網頁技術。就連我的個人網站也是使用它和 <b>Next.js</b>、<b>Tailwind</b> 搭建而成",
       "本身主動積極且熱衷學習各種技術，然而，我體會到除了自我精進，也要將所學知識分享給他人。例如，在過去工作中，我曾向團隊成員分享新的開發工具，例如<b>Prettier</b>，以提高代碼品質與可讀性。此外，在我的Discord群組中，我經常擔任主要的技術分享者，成功幫助群中<b>2</b>位成員獲得前端工程師的工作。"
     ]
@@ -27,7 +27,7 @@
     {
       "id": "work2",
       "img": "/img/experiences/lattek.jpg",
-      "company": "英屬維京群島商拿鐵科技股份有限公司",
+      "company": "拿鐵科技股份有限公司",
       "jobtitle": "全端工程師",
       "location": "台中市",
       "jobposition": "資深工程師",
@@ -38,8 +38,8 @@
         "協助架構師維護底層共用模組與工具，並以 GitLab 版控",
         "導入 Prettier、ESLint 提高程式碼品質",
         "使用 Node.js 輔助開發工作，實作程式碼產出工具",
-        "使用 Angular(2+) 構建使用者操作介面",
-        "使用 ASP.NET Core(3.1+) 實作 RESTful CRUD API 與 JWT 驗證",
+        "使用 Angular (2+) 構建使用者操作介面",
+        "使用 ASP.NET Core (3.1+) 實作 RESTful CRUD API 與 JWT 驗證",
         "使用 PL/SQL 撰寫 Store Procedure 存取 Oracle"
       ]
     },
@@ -53,7 +53,7 @@
       "begintime": [2019, 10],
       "endtime": [2021, 3],
       "texts": [
-        "開發基於 Canvas 2d 與 WebGL 技術的網頁遊戲項目",
+        "開發基於 Canvas 2D 與 WebGL 技術的網頁遊戲項目",
         "擁有不同瀏覽器與移動裝置的產品開發與維護經驗",
         "前後端 API 整合，實現遊戲主體功能與其他金流操作功能",
         "以 TypeScript 為開發語言，配合公司自製的遊戲框架",
