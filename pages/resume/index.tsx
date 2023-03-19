@@ -10,7 +10,7 @@ import { BiDownload } from 'react-icons/bi'
 import { CgSpinner } from 'react-icons/cg'
 
 const Loading = () => (
-  <span className="w-4 h-4 bg-[#403A3A]">
+  <span className="h-4 w-4 bg-[#403A3A]">
     <CgSpinner className={`animate-[spin_1s_linear_infinite] text-[#403A3A]`} />
   </span>
 )
@@ -51,7 +51,7 @@ const DownloadResumeButton = () => {
     <button
       onClick={onClick}
       disabled={loading}
-      className="absolute top-2 left-4 z-[100] mb-[1.5rem] inline-block rounded-full px-4 py-4 font-medium shadow-lg duration-300 hover:bg-[#403A3A] disabled:bg-gray-200 hover:text-[#FAFAFA]"
+      className="absolute top-2 left-4 z-[100] mb-[1.5rem] inline-block rounded-full px-4 py-4 font-medium shadow-lg duration-300 hover:bg-[#403A3A] hover:text-[#FAFAFA] disabled:bg-gray-200"
     >
       {loading ? <Loading /> : <BiDownload />}
     </button>

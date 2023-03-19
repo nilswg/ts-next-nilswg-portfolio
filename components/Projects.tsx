@@ -7,12 +7,33 @@ import SectionTitle from './SectionTitle'
 const projList = [
   {
     id: 'ts-next-nilswg-portfolio',
-    title: 'Portfolio',
+    title: 'Nilswg Portfolio',
     demo: 'https://ts-next-nilswg-portfolio.vercel.app/',
     github: 'https://github.com/nilswg/ts-next-nilswg-portfolio',
     preview: '/img/projects/ts-next-nilswg-portfolio.png',
     tags: ['React', 'Next.js', 'Tailwind', 'Zustand'],
     description: "Nilson Weng's personal portfolio website.",
+  },
+  {
+    id: 'ts-next-meetup-room',
+    title: 'Meetup Room App',
+    demo: 'https://ts-next-meetup-room.vercel.app/',
+    github: 'https://github.com/nilswg/ts-next-meetup-room/',
+    preview: '/img/projects/ts-next-meetup-room.png',
+    tags: ['Next.js', 'Zustand', 'Socket.io', 'Peer.js'],
+    description:
+      'This is a meetup room app for learning WebSocket and building with Next.js, Socket.io, Peer.js, etc.',
+  },
+  {
+    id: 'ts-next-meetup-room-socketio-deno-server',
+    title: 'Meetup Deno Server',
+    demo: 'https://ts-next-meetup-room.vercel.app/',
+    github:
+      'https://github.com/nilswg/ts-next-meetup-room/tree/main/server/deno',
+    preview: '/img/projects/ts-nilswg-meetup-room-socketio.png',
+    tags: ['Deno', 'Socket.io', 'Websocket'],
+    description:
+      'This is Socket.io server of meetup room app. Deploy on Deno-Deploy.',
   },
   {
     id: 'ts-vite-react-weather-app',
@@ -24,34 +45,25 @@ const projList = [
     description:
       'This is a weather app for learning purposes and built with React and Typescript.',
   },
-  // {
-  //   id: 'proj2',
-  //   title: 'Meetup Room App',
-  //   demo: '',
-  //   github: '',
-  //   preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-  //   tags: ['React', 'Next.js'],
-  //   description:
-  //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  // },
-  // {
-  //   id: 'proj3',
-  //   title: 'Just Leetcode',
-  //   demo: '',
-  //   github: '',
-  //   preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-  //   tags: ['React', 'Next.js'],
-  //   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  // },
-  // {
-  //   id: 'proj5',
-  //   title: 'Food Recipe',
-  //   demo: '',
-  //   github: '',
-  //   preview: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-  //   tags: ['React', 'Next.js'],
-  //   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  // },
+  {
+    id: 'ts-react-lowkeydd-app',
+    title: 'Lowkeydd App',
+    demo: '',
+    github: 'https://github.com/zxcasdjason1/lowkeydd-dev',
+    preview: '/img/projects/ts-react-lowkeydd-app.png',
+    tags: ['React', 'Axios', 'Redux', 'Styled Components'],
+    description:
+      'A web app that allows users to watch live streams on YouTube and Twitch.',
+  },
+  {
+    id: 'golang-lowkeydd-server',
+    title: 'Lowkeydd\'s Server',
+    demo: '',
+    github: 'https://github.com/zxcasdjason1/lowkeydd-server',
+    preview: '/img/projects/golang-lowkeydd-server.png',
+    tags: ['Go-Gin', 'Go-Colly', 'Docker', 'Nginx', 'postgreSQL', 'Redis'],
+    description: "Lowkeydd \'s Server. Crawling data from YouTube into Redis. Provide APIs with Go-Gin server",
+  },
   // {
   //   id: 'proj6',
   //   title: 'Lowkeydd',

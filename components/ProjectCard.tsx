@@ -22,8 +22,8 @@ const ProjectCard = ({
   preview,
 }: Props) => (
   <FlipAnimation>
-    <div className="group relative h-[210px] w-[280px] overflow-hidden rounded-md shadow-card sm:h-[300px] sm:w-[400px]">
-      <div className="relative h-[210px] w-full sm:h-[300px]">
+    <div className="group relative h-[210px] w-[280px] overflow-hidden rounded-md shadow-card sm:h-[300px] sm:w-[400px] 2xl:h-[330px] 2xl:w-[440px]">
+      <div className="relative h-[210px] w-full sm:h-[300px] 2xl:h-[330px]">
         <Image
           className="object-fill"
           src={preview}
@@ -32,7 +32,7 @@ const ProjectCard = ({
           fill
         />
       </div>
-      <div className="absolute top-[150px] h-full w-full bg-myblack px-6 opacity-60 duration-300 before:absolute before:left-0 before:top-1 before:h-full before:w-full before:border-t-[1px] before:border-sky-600 group-hover:top-[2.5rem] group-hover:opacity-90 sm:top-[220px]">
+      <div className="absolute top-[150px] 2xl:top-[250px] h-full w-full bg-myblack px-6 opacity-60 duration-300 before:absolute before:left-0 before:top-1 before:h-full before:w-full before:border-t-[1px] before:border-sky-600 group-hover:top-[2.5rem] group-hover:opacity-90 sm:top-[220px]">
         <ProjectLinks demo={demo} github={github} />
         <p className="max-h-[55px] overflow-hidden break-words pt-4 pb-2 font-outfit text-2xl font-[300] text-white sm:max-h-[70px] sm:pt-6 sm:text-4xl">
           {title}

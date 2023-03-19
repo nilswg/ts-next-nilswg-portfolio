@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AiFillGithub, AiOutlineEye } from 'react-icons/ai'
+import { AiFillGithub, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 const ProjectLinks = ({ demo, github }: { demo: string; github: string }) => {
   const LinkStyles =
@@ -9,15 +9,21 @@ const ProjectLinks = ({ demo, github }: { demo: string; github: string }) => {
     <div className="relative -right-[10rem] z-10 duration-300 ease-in-out group-hover:right-0">
       <Link
         href={demo}
-        className="absolute right-[2.5rem] top-[-15px] sm:top-[-19px] sm:right-[3.5rem]"
+        target='_blank'
+        className={`${
+          !demo ? 'pointer-events-none' : ''
+        } absolute right-[2.5rem] top-[-15px] sm:top-[-19px] sm:right-[3.5rem]`}
       >
         <span className={LinkStyles}>
-          <AiOutlineEye />
+          {!demo ? <AiOutlineEyeInvisible/> : <AiOutlineEye /> }
         </span>
       </Link>
       <Link
         href={github}
-        className="absolute right-[-0.75rem] top-[-15px] sm:top-[-19px] sm:right-[-0.5rem]"
+        target='_blank'
+        className={`${
+          !github ? 'pointer-events-none' : ''
+        } absolute right-[-0.75rem] top-[-15px] sm:top-[-19px] sm:right-[-0.5rem]`}
       >
         <span className={LinkStyles}>
           <AiFillGithub />
