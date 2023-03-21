@@ -6,7 +6,7 @@ React, Next.js, TypeScript, Tailwind, Sass, Zod, Zustand, Cypress
 
 <br>
 
-## 🚀 <a href="https://ts-next-nilswg-portfolio.vercel.app/">Demo Website</a>
+## 🚀 <a href="https://nilswg-portfolio.vercel.app/">Demo Website</a>
 click link to see demo.
 
 <br>
@@ -47,7 +47,7 @@ Of course, you need a Line Account, and create a group to receive message.
 
 <br>
 
-## 📚 Read More 
+## 📚 Read More
 
 Some Notion notes are here, but only in Chinese.
 

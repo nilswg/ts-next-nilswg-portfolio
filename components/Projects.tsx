@@ -8,7 +8,7 @@ const projList = [
   {
     id: 'ts-next-nilswg-portfolio',
     title: 'Nilswg Portfolio',
-    demo: 'https://ts-next-nilswg-portfolio.vercel.app/',
+    demo: 'https://nilswg-portfolio.vercel.app/',
     github: 'https://github.com/nilswg/ts-next-nilswg-portfolio',
     preview: '/img/projects/ts-next-nilswg-portfolio.png',
     tags: ['React', 'Next.js', 'Tailwind', 'Zustand'],
@@ -17,7 +17,7 @@ const projList = [
   {
     id: 'ts-next-meetup-room',
     title: 'Meetup Room App',
-    demo: 'https://ts-next-meetup-room.vercel.app/',
+    demo: 'https://nilswg-meet.vercel.app/',
     github: 'https://github.com/nilswg/ts-next-meetup-room/',
     preview: '/img/projects/ts-next-meetup-room.png',
     tags: ['Next.js', 'Zustand', 'Socket.io', 'Peer.js'],
@@ -27,7 +27,7 @@ const projList = [
   {
     id: 'ts-next-meetup-room-socketio-deno-server',
     title: 'Meetup Deno Server',
-    demo: 'https://ts-next-meetup-room.vercel.app/',
+    demo: 'https://nilswg-meet.vercel.app/',
     github:
       'https://github.com/nilswg/ts-next-meetup-room/tree/main/server/deno',
     preview: '/img/projects/ts-nilswg-meetup-room-socketio.png',
