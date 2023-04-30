@@ -15,6 +15,9 @@ const IntersectionLine = ({
 }: IntersectionLineProps) => {
   const ref = useRef<HTMLDivElement | null>(null)
 
+  /**
+   * IntersectionObserver 是一個 Web API，無法直接使用在SSR中，因此，須在 useEffect 中創建 IntersectionObserver，確保元素已經被掛載到 DOM 上，否則，發生錯誤。
+   */
   useEffect(() => {
     if (!ref?.current) return
     const observer: IntersectionObserver = new IntersectionObserver(
