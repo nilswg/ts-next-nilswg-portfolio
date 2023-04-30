@@ -1,3 +1,4 @@
+import { getI18nObjects, getI18nText } from '@/lib/getI18nTranslation'
 import { useTranslation } from 'next-i18next'
 
 /**
@@ -14,9 +15,10 @@ import { useTranslation } from 'next-i18next'
 const ContactTopics = () => {
   const { t } = useTranslation('home')
 
-  const topicOptions = t('contact.topics.options', {
-    returnObjects: true,
-  }) as { id: string; text: string }[]
+  const topicOptions = getI18nObjects<{ id: string; text: string }>(
+    t,
+    'contact.topics.options'
+  )
 
   return (
     <div className={`relative w-full`}>
@@ -25,10 +27,10 @@ const ContactTopics = () => {
         name="topic"
         placeholder="Topic"
         required
-        defaultValue={t('contact.topics.choose') as string}
+        defaultValue={getI18nText(t, 'contact.topics.choose')}
       >
         <option disabled className="bg-myblack text-gray-400">
-          {t('contact.topics.choose') as string}
+          {getI18nText(t, 'contact.topics.choose')}
         </option>
         {topicOptions.map((option) => (
           <option
@@ -44,7 +46,7 @@ const ContactTopics = () => {
         htmlFor="topic"
         className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-[50%] peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base"
       >
-        {t('contact.fields.topic') as string}
+        {getI18nText(t, 'contact.fields.topic')}
       </label>
     </div>
   )

@@ -42,7 +42,7 @@ const NotFoundPage = () => (
 export async function getStaticProps(ctx: NextPageContext) {
   return {
     props: {
-      ...(await serverSideTranslations(ctx.locale as string, ['common'])),
+      ...(await serverSideTranslations(ctx?.locale ?? '', ['common'])),
     },
     revalidate: false
   }

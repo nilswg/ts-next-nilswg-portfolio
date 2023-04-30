@@ -1,3 +1,4 @@
+import { getI18nTextArray } from '@/lib/getI18nTranslation'
 import { Trans, useTranslation } from 'next-i18next'
 import { ReactNode } from 'react'
 import ProjectCard from './ProjectCard'
@@ -77,7 +78,7 @@ const projList = [
 
 const ProjectsTexts = () => {
   const { t } = useTranslation('home')
-  const projectsTexts = t('projects.texts', { returnObjects: true }) as string[]
+  const projectsTexts = getI18nTextArray(t, 'projects.texts')
   return (
     <>
       <SectionTitle text={t('projects.title', { defaultValue: 'Projects' })} />

@@ -27,7 +27,7 @@ const Home = () => {
 export async function getStaticProps(ctx: NextPageContext) {
   return {
     props: {
-      ...(await serverSideTranslations(ctx.locale as string, [
+      ...(await serverSideTranslations(ctx?.locale ?? '', [
         'home',
         'common',
       ])),

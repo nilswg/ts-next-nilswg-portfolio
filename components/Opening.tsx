@@ -1,3 +1,4 @@
+import { getI18nTextArray } from '@/lib/getI18nTranslation'
 import { useTranslation } from 'next-i18next'
 import { useCallback } from 'react'
 import Typewriter from 'typewriter-effect'
@@ -7,10 +8,8 @@ import SocialLinks from './SocialLinks'
 
 const Opening = () => {
   const { t } = useTranslation('home')
-  const letters = t('openings.letters', { returnObjects: true }) as string[]
-  const typewriter = t('openings.typewriter', {
-    returnObjects: true,
-  }) as string[]
+  const letters = getI18nTextArray(t, 'openings.letters')
+  const typewriter = getI18nTextArray(t, 'openings.typewriter')
 
   /**
    * 強迫 Typewriter 於語系切換時刷新

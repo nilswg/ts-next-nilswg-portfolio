@@ -1,3 +1,4 @@
+import { getI18nText, getI18nTextArray } from '@/lib/getI18nTranslation'
 import { useContactStore } from '@/stores/contact'
 import { useToastsStore } from '@/stores/toasts'
 import { Trans, useTranslation } from 'next-i18next'
@@ -9,10 +10,11 @@ import SectionTitle from './SectionTitle'
 
 const ContactTexts = () => {
   const { t } = useTranslation('home')
-  const contactTexts = t('contact.texts', { returnObjects: true }) as string[]
+  const contractTitle = getI18nText(t, 'contact.title')
+  const contactTexts = getI18nTextArray(t, 'contact.texts')
   return (
     <>
-      <SectionTitle text={t('contact.title', { defaultValue: 'Contact' })} />
+      <SectionTitle text={contractTitle} />
       <SectionText>
         {contactTexts.map((text, i) => (
           <p key={`contact_text_${i}`}>
@@ -31,7 +33,8 @@ const ContactTexts = () => {
 
 const FormFields = () => {
   const { t } = useTranslation('home')
-  const fontStyles = useTranslation('common').t('fontStyles') as string
+  const common = useTranslation('common')
+  const fontStyles = getI18nText(common.t, 'fontStyles')
   const message = useContactStore((state) => state.message)
   const setMessage = useContactStore((state) => state.setMessage)
   const onMessageChange = useCallback(
@@ -55,7 +58,7 @@ const FormFields = () => {
             required
           />
           <label className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-[50%] peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base">
-            {t('contact.fields.name') as string}
+            {getI18nText(t, 'contact.fields.name')}
           </label>
         </div>
         <div className="relative w-full">
@@ -71,7 +74,7 @@ const FormFields = () => {
             htmlFor="email"
             className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-[50%] peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base"
           >
-            {t('contact.fields.email') as string}
+            {getI18nText(t, 'contact.fields.email')}
           </label>
         </div>
       </li>
@@ -94,7 +97,7 @@ const FormFields = () => {
             htmlFor="message"
             className="pointer-events-none absolute left-4 top-0 translate-y-[-50%] bg-myblack px-1 text-base text-sky-600 duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:text-base"
           >
-            {t('contact.fields.message') as string}
+            {getI18nText(t, 'contact.fields.message')}
           </label>
         </div>
       </li>
@@ -151,10 +154,10 @@ const FormFrame = ({ children }: { children: ReactNode }) => {
            * 反之，表示為例外錯誤狀況，顯示錯誤訊息。
            */
           const zodError = t(`errorDict.${data.errors}`, {
-            defaultValue: null,
-          }) as string | null
+            defaultValue: '',
+          })
 
-          if (zodError) {
+          if (zodError !== '') {
             console.log('[ZodError]', zodError)
             addToast({ type: 'warn', text: zodError })
           } else {

@@ -1,3 +1,4 @@
+import { getI18nTextArray } from '@/lib/getI18nTranslation'
 import { Trans, useTranslation } from 'next-i18next'
 import ExperiencesTimeline from './ExperiencesTimeline'
 import SectionText from './SectionText'
@@ -5,9 +6,7 @@ import SectionTitle from './SectionTitle'
 
 const ExperienceTexts = () => {
   const { t } = useTranslation('home')
-  const experienceTexts = t('experience.texts', {
-    returnObjects: true,
-  }) as Array<string>
+  const experienceTexts = getI18nTextArray(t, 'experience.texts')
 
   return (
     <>

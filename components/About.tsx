@@ -1,3 +1,4 @@
+import { getI18nText, getI18nTextArray } from '@/lib/getI18nTranslation'
 import AboutImage from '@/public/img/hero2.jpg'
 import { Trans, useTranslation } from 'next-i18next'
 import Image from 'next/image'
@@ -6,23 +7,22 @@ import SectionTitle from './SectionTitle'
 
 const AboutTexts = () => {
   const { t } = useTranslation('home')
-  const aboutTexts = t('about.texts', { returnObjects: true }) as Array<string>
-
+  const aboutTitle = getI18nText(t, 'about.title')
+  const aboutTexts = getI18nTextArray(t, 'about.texts')
   return (
     <div>
-      <SectionTitle text={t('about.title', { defaultValue: 'About' })} />
+      <SectionTitle text={aboutTitle} />
       <SectionText>
-        {aboutTexts?.length &&
-          aboutTexts.map((text, i) => (
-            <p key={`about_text_${i}`}>
-              <Trans
-                i18nKey={text}
-                components={{
-                  b: <b />,
-                }}
-              />
-            </p>
-          ))}
+        {aboutTexts.map((text, i) => (
+          <p key={`about_text_${i}`}>
+            <Trans
+              i18nKey={text}
+              components={{
+                b: <b />,
+              }}
+            />
+          </p>
+        ))}
       </SectionText>
     </div>
   )

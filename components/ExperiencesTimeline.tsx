@@ -1,3 +1,4 @@
+import { getI18nObjects } from '@/lib/getI18nTranslation'
 import getJobDate from '@/lib/getJobDate'
 import getJobTenure from '@/lib/getJobTenure'
 import { useTranslation } from 'next-i18next'
@@ -21,9 +22,10 @@ const ExperiencesTimelineTexts = () => {
   const common = useTranslation('common')
   const lang = common.t('lang')
   const fontStyles = common.t('fontStyles')
-  const experiences = home.t('experience-timeline', {
-    returnObjects: true,
-  }) as ExperienceProps[]
+  const experiences = getI18nObjects<ExperienceProps>(
+    home.t,
+    'experience-timeline'
+  )
 
   const [select, setSelect] = useState<HTMLInputElement | null>(null)
 
@@ -61,7 +63,7 @@ const ExperiencesTimelineTexts = () => {
             >
               <Image
                 className="rounded-full"
-                src={e.img}
+                src={e?.img ?? ''}
                 alt={`image of ${e.company}`}
                 height={60}
                 width={60}
@@ -71,13 +73,13 @@ const ExperiencesTimelineTexts = () => {
               id="date"
               className={`pointer-events-none absolute top-[-3rem] cursor-none ${fontStyles} text-base tracking-wider text-sky-600 md:absolute md:top-[50%] md:-left-[18rem] md:-mt-6 md:w-[13rem] md:px-0 md:text-right`}
             >
-              {getJobDate(e.begintime, lang)} - {getJobDate(e.endtime, lang)}
+              {getJobDate(e?.begintime, lang)} - {getJobDate(e?.endtime, lang)}
             </p>
             <p
               id="job-tenure"
               className={`pointer-events-none absolute top-[-1.5rem] cursor-none ${fontStyles} text-base tracking-wider text-sky-600 md:absolute md:top-[50%] md:-left-[18rem] md:mt-0 md:w-[13rem] md:px-0 md:text-right`}
             >
-              {getJobTenure(e.begintime, e.endtime, lang)}
+              {getJobTenure(e?.begintime, e?.endtime, lang)}
             </p>
             <label htmlFor={e.id} className="experience-box">
               <h1
@@ -92,7 +94,7 @@ const ExperiencesTimelineTexts = () => {
               >
                 {e.company}, {e.jobposition}
               </h2>
-              {e.texts.map((text, i) => (
+              {e?.texts?.map((text, i) => (
                 <p
                   key={i}
                   className={`my-2 hidden overflow-hidden px-4  text-justify ${fontStyles} text-sm sm:text-base lg:text-lg`}

@@ -1,3 +1,4 @@
+import { getI18nObjects, getI18nTextArray } from '@/lib/getI18nTranslation'
 import getJobDate from '@/lib/getJobDate'
 import { Trans, useTranslation } from 'next-i18next'
 import Image from 'next/image'
@@ -36,9 +37,7 @@ type ExperienceProps = {
 const Resume = () => {
   const { t } = useTranslation('resume')
   const home = useTranslation('home')
-  const experiences = home.t('experience-timeline', {
-    returnObjects: true,
-  }) as ExperienceProps[]
+  const experiences = getI18nObjects<ExperienceProps>(home.t, 'experience-timeline')
 
   const lang = useTranslation('common').t('lang')
 
@@ -55,6 +54,8 @@ const Resume = () => {
     lang === 'en'
       ? /*tw:*/ 'font-roboto font-semibold tracking-wide'
       : /*tw:*/ 'font-zhtw font-semibold tracking-wider'
+
+  const profileTexts = getI18nTextArray(t, 'profileTexts')
 
   return (
     <div
@@ -127,13 +128,11 @@ const Resume = () => {
           <section className={`py-6 ${textFontStyles}`}>
             <SectionTitle text={t('profile')} />
             <div className="text-[.875rem]">
-              {(t('profileTexts', { returnObjects: true }) as string[]).map(
-                (text, i) => (
-                  <p key={`resume_text_${i}`} className="mb-2">
-                    <Trans i18nKey={text} components={{ b: <b /> }} />
-                  </p>
-                )
-              )}
+              {profileTexts.map((text, i) => (
+                <p key={`resume_text_${i}`} className="mb-2">
+                  <Trans i18nKey={text} components={{ b: <b /> }} />
+                </p>
+              ))}
             </div>
           </section>
         </div>
@@ -167,7 +166,7 @@ const Resume = () => {
                       {getJobDate(x.endtime, lang)}
                     </span>
                     <span className="text-[.85rem] font-normal tracking-normal text-[#0B0A0A]">
-                      {x.texts.map((text, i) => (
+                      {x?.texts?.map((text, i) => (
                         <p key={i} className={`my-0 flex pl-2`}>
                           <span className="inline-block">-&nbsp;</span>
                           <span className="inline-block" key={i}>

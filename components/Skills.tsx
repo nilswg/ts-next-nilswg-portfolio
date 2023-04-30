@@ -1,3 +1,4 @@
+import { getI18nTextArray } from '@/lib/getI18nTranslation'
 import { Trans, useTranslation } from 'next-i18next'
 import SectionText from './SectionText'
 import SectionTitle from './SectionTitle'
@@ -44,7 +45,7 @@ const mySkills = [
 
 const SkillsTexts = () => {
   const { t } = useTranslation('home')
-  const skillsTexts = t('skills.texts', { returnObjects: true }) as string[]
+  const skillsTexts = getI18nTextArray(t, 'skills.texts')
   return (
     <>
       <SectionTitle text={t('skills.title', { defaultValue: 'Skills' })} />
