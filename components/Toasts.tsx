@@ -1,6 +1,5 @@
-import delay from '@/lib/delay'
 import { useToastsStore } from '@/stores/toasts'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { HiOutlineX } from 'react-icons/hi'
 
 const Close = () => (
@@ -75,15 +74,23 @@ type ToastProps = {
 const Toast = ({ id, type, text }: ToastProps) => {
   const removeToast = useToastsStore((state) => state.removeToast)
   const [anim, setAnim] = useState('animate-slideInRight animate-duration-300')
+  const timeout = useRef<NodeJS.Timeout | null>(null)
 
   const onClick = useCallback(() => {
     setAnim('animate-fadeOutRight animate-duration-300')
-    delay(300).then(() => removeToast(id))
+    if (timeout.current !== null) clearTimeout(timeout.current)
+    timeout.current = setTimeout(() => removeToast(id), 300)
   }, [removeToast])
 
   useEffect(() => {
-    delay(5000).then(() => onClick())
-  }, [onClick])
+    timeout.current = setTimeout(() => onClick(), 5000)
+
+    return () => {
+      if (timeout.current !== null) {
+        clearTimeout(timeout.current)
+      }
+    }
+  }, [])
 
   return (
     <div className={`transition-all ${anim}`}>
@@ -93,10 +100,10 @@ const Toast = ({ id, type, text }: ToastProps) => {
 }
 
 const Toasts = () => {
-  const toats = useToastsStore((state) => state.toasts)
+  const toasts = useToastsStore((state) => state.toasts)
   return (
     <div className="fixed top-20 right-3 z-20 w-[20rem]">
-      {toats.map((e) => (
+      {toasts.map((e) => (
         <Toast key={e.id} id={e.id} type={e.type} text={e.text} />
       ))}
     </div>

@@ -1,4 +1,4 @@
-import delay from '@/lib/delay'
+import { useAnimations } from '@/hooks/useAnimations'
 import { useEffect, useState } from 'react'
 import { CgChevronDown } from 'react-icons/cg'
 
@@ -10,13 +10,14 @@ type ButtonProps = {
 const OpeningButton = ({ delayMS, text }: ButtonProps) => {
   const [className, setClassName] = useState('opacity-0')
 
-  useEffect(() => {
-    ;(async () => {
-      await delay(delayMS, () => setClassName('opacity-1 animate-fadeIn'))
-      await delay(1000, () => setClassName('opacity-1 animate-rubberBand'))
-      await delay(1000, () => setClassName('opacity-1 animate-none'))
-    })()
-  }, [])
+  const done = useAnimations(
+    [
+      { show: () => setClassName('opacity-1 animate-fadeIn'), delay: delayMS },
+      { show: () => setClassName('opacity-1 animate-rubberBand'), delay: 1000 },
+      { show: () => setClassName('opacity-1 animate-none'), delay: 1000 },
+    ],
+    [setClassName]
+  )
 
   return (
     <a href={'#about'} className={`flat-btn ${className} group`}>
