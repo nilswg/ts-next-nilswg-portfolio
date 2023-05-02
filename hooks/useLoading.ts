@@ -1,19 +1,27 @@
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
-const useLoading = (initialValue: boolean): boolean => {
+export function useLoading(initialValue: boolean): boolean {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(initialValue)
 
-  useEffect(() => {
-    const handleStart = (url: string) => {
+  const handleStart = useCallback(
+    (url: string) => {
       // console.log('handleStart', url, router.asPath, url === router.asPath);
       return setIsLoading(true)
-    }
-    const handleComplete = (url: string) => {
+    },
+    [setIsLoading]
+  )
+
+  const handleComplete = useCallback(
+    (url: string) => {
       // console.log('handleComplete', url, router.asPath, url === router.asPath);
       return setIsLoading(false)
-    }
+    },
+    [setIsLoading]
+  )
+
+  useEffect(() => {
     router.events.on('routeChangeStart', handleStart)
     router.events.on('routeChangeComplete', handleComplete)
     router.events.on('routeChangeError', handleComplete)
@@ -23,9 +31,7 @@ const useLoading = (initialValue: boolean): boolean => {
       router.events.off('routeChangeComplete', handleComplete)
       router.events.off('routeChangeError', handleComplete)
     }
-  })
+  }, [router.events])
 
   return isLoading
 }
-
-export default useLoading

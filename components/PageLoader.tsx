@@ -1,4 +1,4 @@
-import useLoading from '@/hooks/useLoading'
+import { useLoading } from '@/hooks/useLoading'
 import { IoMdRocket } from 'react-icons/io'
 
 type DotProps = {
