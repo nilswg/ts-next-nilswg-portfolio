@@ -63,4 +63,4 @@ if (require.main === module) {
   )
 }
 
-module.exports = genPDF
+module.exports = { genPDF }

@@ -9,6 +9,15 @@ type Data = {
 
 const password = process.env['RESUME_DOWNLOAD_PASSWORD']
 
+/**
+ * 使用方式 (僅能於開發模式中使用)
+ *
+ * 如果是 WSL 要確保開啟 VcXsrv
+ *
+ * ex: http://localhost:3000/api/resume/create?locale=zh-TW
+ * ex: http://localhost:3000/api/resume/create?locale=en
+ */
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -19,9 +28,6 @@ export default async function handler(
     return
   }
 
-  /**
-   * ex: api/resume?lang=ch
-   */
   const baseUrl = getBaseUrl(req)
   console.log('baseUrl', baseUrl)
 
@@ -29,11 +35,12 @@ export default async function handler(
   const url = `${baseUrl}/${locale}/resume/print`
   const filename = `./public/pdf/resume_${lang}.pdf`
 
-  console.log('lang', req.query)
+  console.log('req.query:>>', req.query)
+  console.log('lang:>>', lang)
 
   if (lang === 'en' || lang === 'ch') {
     try {
-      const genPDF = (await import('@/puppeteer/genPDF')).default
+      const { genPDF } = (await import('@/puppeteer/genPDF'))
 
       const { encrypt } = await import('@/puppeteer/qpdf')
 
@@ -44,7 +51,7 @@ export default async function handler(
       const tempPDF = filename.split('.pdf')[0] + '_temp'
       await genPDF(url, tempPDF)
       await encrypt(tempPDF, filename, password!)
-      await unlink(tempPDF); // 刪除 tempPDF
+      await unlink(tempPDF) // 刪除 tempPDF
 
       res.status(200).json({ message: 'Resume created successfully.', locale })
     } catch (error) {

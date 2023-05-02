@@ -5,18 +5,6 @@ import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-type ExperienceProps = {
-  id: string
-  img: string
-  company: string
-  jobtitle: string
-  jobposition: string
-  location: string
-  begintime: number[]
-  endtime: number[]
-  texts: string[]
-}
-
 const ExperiencesTimelineTexts = () => {
   const home = useTranslation('home')
   const common = useTranslation('common')
