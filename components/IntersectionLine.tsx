@@ -7,12 +7,12 @@ type IntersectionLineProps = {
   options?: IntersectionObserverInit
 }
 
-const IntersectionLine = ({
+export const IntersectionLine: React.FC<IntersectionLineProps> = ({
   fn,
   visible = false,
   position,
   options,
-}: IntersectionLineProps) => {
+}) => {
   const ref = useRef<HTMLDivElement | null>(null)
 
   /**
@@ -49,5 +49,3 @@ const IntersectionLine = ({
     ></div>
   )
 }
-
-export default IntersectionLine
