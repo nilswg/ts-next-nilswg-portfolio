@@ -1,6 +1,6 @@
 import { getI18nTextArray } from '@/lib/getI18nTranslation'
 import { Trans, useTranslation } from 'next-i18next'
-import ExperiencesTimeline from './ExperiencesTimeline'
+import { ExperienceTimeline } from './ExperienceTimeline'
 import SectionText from './SectionText'
 import SectionTitle from './SectionTitle'
 
@@ -45,7 +45,7 @@ const Experience = () => {
         <div className="2xl:w-3/5 2xl:pt-10">
           <h1 className="tags ml-6 2xl:ml-[10%]">{'<timeline>'}</h1>
           <div className="py-5">
-            <ExperiencesTimeline />
+            <ExperienceTimeline />
           </div>
           <h1 className="tags ml-6 2xl:ml-[10%]">{'</timeline>'}</h1>
         </div>

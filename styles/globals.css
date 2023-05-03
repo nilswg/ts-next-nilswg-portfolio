@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -183,34 +184,29 @@
 }
 @layer components {
   #timeline .experience-box {
-    @apply mr-[0.5rem] max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl block cursor-pointer rounded-sm border-2 border-sky-800 py-4 md:mr-[1.2rem];
+    @apply mr-[0.5rem] block max-w-md cursor-pointer rounded-sm border-2 border-sky-800 py-4 transition-all  duration-[0.3s] md:mr-[1.2rem] lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl;
   }
   #timeline .experience-box::before {
-    @apply pointer-events-none absolute top-[50%] right-[100%] -mt-[0.75rem] border-[0.75rem] border-transparent border-r-sky-800 content-[""];
+    @apply pointer-events-none absolute top-[50%] right-[100%] -mt-[0.75rem] border-[0.75rem] border-transparent border-r-sky-800 transition-colors content-[""];
   }
   #timeline .experience-box::after {
-    @apply pointer-events-none absolute top-[50%] right-[calc(100%-3px)] -mt-[0.75rem] border-[0.75rem] border-transparent border-r-gray-900 content-[""];
+    @apply pointer-events-none absolute top-[50%] right-[calc(100%-3px)] -mt-[0.75rem] border-[0.75rem] border-transparent border-r-gray-900 transition-colors content-[""];
   }
-  #timeline [type=radio]:checked ~ .experience-box #jobtitle {
-    @apply transition-all duration-[0.3s] md:mt-3;
+  /*
+   * ## class selector
+   *
+   * CSS 中的類選擇器使用句點（"."）後跟類名來表示。
+   * 例如， css : .experience-box.open 表同時包含 .experience-box 和 .open 兩個類
+   * 對應， html: class="experience-box open"
+   */
+  #timeline .experience-box.open {
+    @apply mr-[0.5rem] max-h-full translate-x-[0.5rem] border-sky-400 md:mr-[1.2rem]  md:translate-x-[1.2rem];
   }
-  #timeline [type=radio]:checked ~ #date {
-    @apply translate-x-[0.5rem] text-sky-300 transition-all duration-[0.3s] md:translate-x-0;
+  #timeline .experience-box.open > p {
+    @apply flex animate-fadeIn flex-row;
   }
-  #timeline [type=radio]:checked ~ #job-tenure {
-    @apply translate-x-[0.5rem] text-sky-300 transition-all duration-[0.3s] md:translate-x-0;
-  }
-  #timeline [type=radio]:checked ~ #circle {
-    @apply border-[3px] border-sky-400 transition-all;
-  }
-  #timeline [type=radio]:checked ~ .experience-box {
-    @apply mr-[0.5rem] max-h-full translate-x-[0.5rem] border-sky-400 transition-all duration-[0.3s] md:mr-[1.2rem]  md:translate-x-[1.2rem];
-  }
-  #timeline [type=radio]:checked ~ .experience-box > p {
-    @apply flex animate-fadeIn flex-row transition-colors;
-  }
-  #timeline [type=radio]:checked ~ .experience-box::before {
-    @apply border-r-sky-400 transition-colors;
+  #timeline .experience-box.open::before {
+    @apply border-r-sky-400;
   }
 }
 @layer components {
