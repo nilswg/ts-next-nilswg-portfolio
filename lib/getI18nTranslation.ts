@@ -2,7 +2,8 @@
  * 對透過 i18n（即國際化和區域化）獲取的翻譯文字進行型態檢查
  * 此處設置其 type guard 方法。如 isString、isStringArray
  */
-import { TFunction } from 'next-i18next'
+
+import type { TFunction } from "i18next"
 
 /**
  * check type of input is string
