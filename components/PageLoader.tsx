@@ -11,9 +11,8 @@ const Dot = ({ index, dotColor }: DotProps) => (
     className={`absolute inset-0 h-full w-full rotate-[${-10 + index * 18}deg]`}
   >
     <span
-      className={`absolute inset-0 h-[1rem] w-[1rem] scale-0 animate-[rocketdot_2s_linear_infinite] rounded-full animate-delay-[${
-        index / 10
-      }s] ${dotColor} sm:h-[2rem] sm:w-[2rem]`}
+      className={`absolute inset-0 h-[1rem] w-[1rem] scale-0 animate-[rocketdot_2s_linear_infinite] rounded-full  ${dotColor} sm:h-[2rem] sm:w-[2rem]`}
+      style={{animationDelay: `${index / 10}s`}}
     ></span>
   </div>
 )
