@@ -25,7 +25,8 @@ const ContactTopics = () => {
       <select
         className="peer h-14 w-full rounded-md border-2 border-sky-600 bg-transparent px-4 py-2 text-sky-400 placeholder-transparent outline-none placeholder-shown:text-gray-400"
         name="topic"
-        placeholder="Topic"
+        data-placeholder="Topic"
+        aria-placeholder='Topic'
         required
         defaultValue={getI18nText(t, 'contact.topics.choose')}
       >

@@ -11,7 +11,12 @@ const projList = [
     title: 'Nilswg Portfolio',
     demo: 'https://nilswg-portfolio.vercel.app/',
     github: 'https://github.com/nilswg/ts-next-nilswg-portfolio',
-    preview: '/img/projects/ts-next-nilswg-portfolio.png',
+    preview: {
+      src: '/img/projects/ts-next-nilswg-portfolio.png',
+      alt: 'Project - Nilswg Portfolio',
+      width: 800,
+      height: 600
+    },
     tags: ['React', 'Next.js', 'Tailwind', 'Zustand'],
     description: "Nilson Weng's personal portfolio website.",
   },
@@ -20,7 +25,12 @@ const projList = [
     title: 'Meetup Room App',
     demo: 'https://nilswg-meet.vercel.app/',
     github: 'https://github.com/nilswg/ts-next-meetup-room/',
-    preview: '/img/projects/ts-next-meetup-room.png',
+    preview: {
+      src: '/img/projects/ts-next-meetup-room.png',
+      alt: 'Project - Meetup Room App',
+      width: 800,
+      height: 600
+    },
     tags: ['Next.js', 'Zustand', 'Socket.io', 'Peer.js'],
     description:
       'This is a meetup room app for learning WebSocket and building with Next.js, Socket.io, Peer.js, etc.',
@@ -31,7 +41,13 @@ const projList = [
     demo: 'https://nilswg-meet.vercel.app/',
     github:
       'https://github.com/nilswg/ts-next-meetup-room/tree/main/server/deno',
-    preview: '/img/projects/ts-nilswg-meetup-room-socketio.png',
+    // preview: '/img/projects/ts-nilswg-meetup-room-socketio.png',
+    preview: {
+      src: '/img/projects/ts-nilswg-meetup-room-socketio.png',
+      alt: 'Project - Meetup Room App Deno Server',
+      width: 800,
+      height: 600
+    },
     tags: ['Deno', 'Socket.io', 'Websocket'],
     description:
       'This is Socket.io server of meetup room app. Deploy on Deno-Deploy.',
@@ -41,7 +57,13 @@ const projList = [
     title: 'Weather App',
     demo: 'https://nilswg.github.io/ts-vite-react-weather-app/',
     github: 'https://github.com/nilswg/ts-vite-react-weather-app',
-    preview: '/img/projects/ts-vite-react-weather-app.png',
+    // preview: '/img/projects/ts-vite-react-weather-app.png',
+    preview: {
+      src: '/img/projects/ts-vite-react-weather-app.png',
+      alt: 'Project - Weather App',
+      width: 800,
+      height: 600
+    },
     tags: ['React', 'Redux Toolkit', 'Vite', 'TypeScript', 'Styled Components'],
     description:
       'This is a weather app for learning purposes and built with React and Typescript.',
@@ -51,7 +73,13 @@ const projList = [
     title: 'Lowkeydd App',
     demo: '',
     github: 'https://github.com/zxcasdjason1/lowkeydd-dev',
-    preview: '/img/projects/ts-react-lowkeydd-app.png',
+    // preview: '/img/projects/ts-react-lowkeydd-app.png',
+    preview: {
+      src: '/img/projects/ts-react-lowkeydd-app.png',
+      alt: 'Project - Lowkeydd App',
+      width: 800,
+      height: 600
+    },
     tags: ['React', 'Axios', 'Redux', 'Styled Components'],
     description:
       'A web app that allows users to watch live streams on YouTube and Twitch.',
@@ -61,7 +89,13 @@ const projList = [
     title: 'Lowkeydd\'s Server',
     demo: '',
     github: 'https://github.com/zxcasdjason1/lowkeydd-server',
-    preview: '/img/projects/golang-lowkeydd-server.png',
+    // preview: '/img/projects/golang-lowkeydd-server.png',
+    preview: {
+      src: '/img/projects/golang-lowkeydd-server.png',
+      alt: 'Project - Lowkeydd\'s Server',
+      width: 800,
+      height: 600
+    },
     tags: ['Go-Gin', 'Go-Colly', 'Docker', 'Nginx', 'postgreSQL', 'Redis'],
     description: "Lowkeydd \'s Server. Crawling data from YouTube into Redis. Provide APIs with Go-Gin server",
   },

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { FC, Fragment, ReactNode, createContext, memo, useCallback, useContext, useMemo, useState } from 'react'
 import EnChButton from './EnChButton'
 import SocialLinks from './SocialLinks'
-import Image from 'next/image'
+import { Image } from './Image'
 import logo from 'public/nilswg-blue-noblack.svg'
 import { HiMenuAlt2, HiOutlineX } from 'react-icons/hi'
 

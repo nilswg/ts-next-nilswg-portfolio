@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Image } from './Image'
 import { useCallback, useState } from 'react'
 import { ExperienceDetails, ExperienceDetailsProps } from './ExperienceDetails'
 
