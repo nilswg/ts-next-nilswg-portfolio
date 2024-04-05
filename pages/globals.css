@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,51 +51,6 @@
   }
 }
 @layer components {
-  /* The safelist created by Sass will be deleted in production mode. */
-  /* @apply animate-delay-[2s]; */
-  /* @apply animate-delay-[2.1s]; */
-  /* @apply animate-delay-[2.2s]; */
-  /* @apply animate-delay-[2.3s]; */
-  /* @apply animate-delay-[2.4s]; */
-  /* @apply animate-delay-[2.5s]; */
-  /* @apply animate-delay-[2.6s]; */
-  /* @apply animate-delay-[2.7s]; */
-  /* @apply animate-delay-[2.8s]; */
-  /* @apply animate-delay-[2.9s]; */
-  /* @apply animate-delay-[3s]; */
-  /* @apply animate-delay-[3.1s]; */
-  /* @apply animate-delay-[3.2s]; */
-  /* @apply animate-delay-[3.3s]; */
-  /* @apply animate-delay-[3.4s]; */
-  /* @apply animate-delay-[3.5s]; */
-  /* @apply animate-delay-[3.6s]; */
-  /* @apply animate-delay-[3.7s]; */
-  /* @apply animate-delay-[3.8s]; */
-  /* @apply animate-delay-[3.9s]; */
-  /* @apply animate-delay-[4s]; */
-  /* @apply animate-delay-[4.1s]; */
-  /* @apply animate-delay-[4.2s]; */
-  /* @apply animate-delay-[4.3s]; */
-  /* @apply animate-delay-[4.4s]; */
-  /* @apply animate-delay-[4.5s]; */
-  /* @apply animate-delay-[4.6s]; */
-  /* @apply animate-delay-[4.7s]; */
-  /* @apply animate-delay-[4.8s]; */
-  /* @apply animate-delay-[4.9s]; */
-  /* @apply animate-delay-[5s]; */
-  /* @apply animate-delay-[5.1s]; */
-  /* @apply animate-delay-[5.2s]; */
-  /* @apply animate-delay-[5.3s]; */
-  /* @apply animate-delay-[5.4s]; */
-  /* @apply animate-delay-[5.5s]; */
-  /* @apply animate-delay-[5.6s]; */
-  /* @apply animate-delay-[5.7s]; */
-  /* @apply animate-delay-[5.8s]; */
-  /* @apply animate-delay-[5.9s]; */
-  /* @apply animate-delay-[6s]; */
-  /* @apply animate-delay-[6.1s]; */
-}
-@layer components {
   .flat-btn {
     @apply my-1 inline-block border border-sky-300 px-8 py-4 text-sm font-bold tracking-[0.5rem] text-sky-300 no-underline transition-colors duration-300;
   }
@@ -138,49 +92,6 @@
     mask-repeat: no-repeat;
     mask-position: center center;
   }
-}
-@layer components {
-  /* The safelist created by Sass will be deleted in production mode. */
-  /* @apply rotate-[-10deg]; */
-  /* @apply animate-delay-[0s]; */
-  /* @apply rotate-[8deg]; */
-  /* @apply animate-delay-[0.1s]; */
-  /* @apply rotate-[26deg]; */
-  /* @apply animate-delay-[0.2s]; */
-  /* @apply rotate-[44deg]; */
-  /* @apply animate-delay-[0.3s]; */
-  /* @apply rotate-[62deg]; */
-  /* @apply animate-delay-[0.4s]; */
-  /* @apply rotate-[80deg]; */
-  /* @apply animate-delay-[0.5s]; */
-  /* @apply rotate-[98deg]; */
-  /* @apply animate-delay-[0.6s]; */
-  /* @apply rotate-[116deg]; */
-  /* @apply animate-delay-[0.7s]; */
-  /* @apply rotate-[134deg]; */
-  /* @apply animate-delay-[0.8s]; */
-  /* @apply rotate-[152deg]; */
-  /* @apply animate-delay-[0.9s]; */
-  /* @apply rotate-[170deg]; */
-  /* @apply animate-delay-[1s]; */
-  /* @apply rotate-[188deg]; */
-  /* @apply animate-delay-[1.1s]; */
-  /* @apply rotate-[206deg]; */
-  /* @apply animate-delay-[1.2s]; */
-  /* @apply rotate-[224deg]; */
-  /* @apply animate-delay-[1.3s]; */
-  /* @apply rotate-[242deg]; */
-  /* @apply animate-delay-[1.4s]; */
-  /* @apply rotate-[260deg]; */
-  /* @apply animate-delay-[1.5s]; */
-  /* @apply rotate-[278deg]; */
-  /* @apply animate-delay-[1.6s]; */
-  /* @apply rotate-[296deg]; */
-  /* @apply animate-delay-[1.7s]; */
-  /* @apply rotate-[314deg]; */
-  /* @apply animate-delay-[1.8s]; */
-  /* @apply rotate-[332deg]; */
-  /* @apply animate-delay-[1.9s]; */
 }
 @layer components {
   #timeline .experience-box {

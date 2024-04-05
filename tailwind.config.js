@@ -1,4 +1,5 @@
 const withAnimations = require('animated-tailwindcss');
+const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withAnimations({
@@ -6,11 +7,10 @@ module.exports = withAnimations({
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx,scss}',
     './app/**/*.{js,ts,jsx,tsx}',
-    './styles/globals.css',
   ],
   theme: {
     extend: {
-      colors:{
+      colors: {
         myblack: 'rgb(28 29 37)'
       },
       fontFamily: {
@@ -46,7 +46,7 @@ module.exports = withAnimations({
           }
         },
         sky400: {
-          to: { color: "rgb(56 189 248)"}
+          to: { color: "rgb(56 189 248)" }
         },
         rotating: {
           "0%": { "transform": "rotate(0deg)" },

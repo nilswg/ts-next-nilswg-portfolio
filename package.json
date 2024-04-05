@@ -2,11 +2,9 @@
   "name": "ts-next-nilswg-portfolio",
   "private": true,
   "scripts": {
-    "dev": "concurrently -n next,sass \"next dev\" \"npm run sass -- -w\"",
-    "build": "npm run sass && next build",
-    "start": "npm run sass && next start",
-    "sass": "npx sass --no-source-map styles/src/index.scss styles/globals.css",
-    "tailwind": "npx postcss styles/globals.css -o styles/.temp.css",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "cy:open": "npx cypress open"
   },
   "dependencies": {
@@ -37,7 +35,6 @@
     "prettier-plugin-organize-imports": "3.2.2",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "puppeteer": "^19.11.1",
-    "sass": "^1.57.1",
     "tailwindcss": "^3.2.1",
     "typescript": "^4.8.4"
   }

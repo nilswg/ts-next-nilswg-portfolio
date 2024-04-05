@@ -14,9 +14,7 @@ const Letter = ({ index, text }: Props) => {
   const ref = useRef<HTMLSpanElement | null>(null)
 
   /* 設置初始動畫 */
-  const [className, setClassName] = useState(
-    /*tw:*/ `animate-bounceIn animate-delay-[${index / 10}s]`
-  )
+  const [className, setClassName] = useState(/*tw:*/ `animate-bounceIn`)
 
   /* 因為字母有初始動畫，必須等初始動畫播完才接受觸發 */
   useDelayEffect(() => setEnable(true), delayMS, [])
@@ -27,13 +25,7 @@ const Letter = ({ index, text }: Props) => {
    */
   const [letterAnimate, clearLetterAnimate] = useAnimationsFn(
     [
-      {
-        show: () =>
-          setClassName(
-            /*tw:*/ 'animate-[1s_both_rubberBand,_0.5s_reverse_sky400]'
-          ),
-        delay: 0,
-      },
+      { show: () => setClassName(/*tw:*/ 'animate-[1s_both_rubberBand,_0.5s_reverse_sky400]'), delay: 0 },
       { show: () => setClassName(/*tw:*/ 'animate-none'), delay: 1000 },
     ],
     [setClassName]
@@ -56,7 +48,7 @@ const Letter = ({ index, text }: Props) => {
   }, [enable, ref.current, setClassName])
 
   return (
-    <span className={`inline-block min-w-[0.5rem] ${className}`} ref={ref}>
+    <span className={`inline-block min-w-[0.5rem] ${className}`} ref={ref} style={{ animationDelay: `${index / 10}s` }}>
       {text}
     </span>
   )
