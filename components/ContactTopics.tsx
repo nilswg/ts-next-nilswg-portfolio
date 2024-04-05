@@ -1,5 +1,5 @@
 import { getI18nObjects, getI18nText } from '@/lib/getI18nTranslation'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from './useI18n'
 
 /**
  * 範例:

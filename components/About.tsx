@@ -1,6 +1,6 @@
 import { getI18nText, getI18nTextArray } from '@/lib/getI18nTranslation'
 import AboutImage from '@/public/img/hero2.jpg'
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from './useI18n'
 import { Image } from './Image'
 import SectionText from './SectionText'
 import SectionTitle from './SectionTitle'

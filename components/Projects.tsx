@@ -1,5 +1,5 @@
 import { getI18nTextArray } from '@/lib/getI18nTranslation'
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from './useI18n'
 import { ReactNode } from 'react'
 import ProjectCard from './ProjectCard'
 import SectionText from './SectionText'

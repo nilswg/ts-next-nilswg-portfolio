@@ -1,4 +1,5 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation as useI18nTranslation } from 'next-i18next'
+import { MyTrans } from './Trans'
 
 const defaultLocale = 'en'
 
@@ -27,7 +28,10 @@ export const getClientLocale = () => {
   return defaultLocale
 }
 
+export const useTranslation = useI18nTranslation;
 
 export const useI18n = (...args: Parameters<typeof useTranslation>) => {
   return useTranslation()
 }
+
+export const Trans = MyTrans

@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from './useI18n'
 import { Link } from './Link'
 import { FC, Fragment, ReactNode, createContext, memo, useCallback, useContext, useMemo, useState } from 'react'
 import EnChButton from './EnChButton'

@@ -1,7 +1,7 @@
 import { getI18nObjects } from '@/lib/getI18nTranslation'
 import getJobDate from '@/lib/getJobDate'
 import getJobTenure from '@/lib/getJobTenure'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from './useI18n'
 import { ExperienceTimelineItem } from './ExperienceTimelineItem'
 
 export const ExperienceTimeline: React.FC = () => {

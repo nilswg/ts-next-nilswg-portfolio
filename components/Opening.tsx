@@ -1,5 +1,5 @@
 import { getI18nTextArray } from '@/lib/getI18nTranslation'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from './useI18n'
 import { useCallback } from 'react'
 import Typewriter from 'typewriter-effect'
 import LettersZone from './LettersZone'

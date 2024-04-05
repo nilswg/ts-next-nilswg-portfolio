@@ -1,6 +1,5 @@
 import { getI18nObjects, getI18nTextArray } from '@/lib/getI18nTranslation'
-import { useTranslation } from 'next-i18next'
-import { ResumeCertificates } from './ResumeCertificates'
+import { useTranslation } from './useI18n'
 import { ResumeExperience } from './ResumeExperience'
 import { ResumeHome } from './ResumeHome'
 import { ResumeLanguages } from './ResumeLanguages'
