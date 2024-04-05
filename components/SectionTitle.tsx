@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import { useI18n } from './useI18n'
 import LettersZone from './LettersZone'
 
 type Props = {
@@ -6,11 +6,8 @@ type Props = {
 }
 
 const SectionTitle = ({ text }: Props) => {
-  const { locale } = useRouter()
-  const fontStyles =
-    locale === 'en'
-      ? /*tw:*/ 'font-russon font-normal'
-      : /*tw:*/ 'font-notosans_bold mb-3'
+  const { i18n } = useI18n()
+  const fontStyles = i18n.language === 'en' ? /*tw:*/ 'font-russon font-normal' : /*tw:*/ 'font-notosans_bold mb-3'
   return (
     <>
       <h1 className="tags ml-6 pt-10">{'<h1>'}</h1>

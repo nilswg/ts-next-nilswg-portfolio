@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import { useI18n } from './useI18n'
 import { ReactNode } from 'react'
 
 type Props = {
@@ -6,8 +6,8 @@ type Props = {
 }
 
 const SectionText = ({ children }: Props) => {
-  const { locale } = useRouter()
-  const fontStyle = locale === 'zh-TW' ? 'font-zhtw' : 'font-outfit'
+  const { i18n } = useI18n()
+  const fontStyle = i18n.language === 'zh-TW' ? 'font-zhtw' : 'font-outfit'
   return (
     <>
       <h1 className="tags ml-6">{'<p>'}</h1>
