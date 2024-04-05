@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from './Link'
 import { AiFillGithub, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 const ProjectLinks = ({ demo, github }: { demo: string; github: string }) => {
@@ -18,6 +18,7 @@ const ProjectLinks = ({ demo, github }: { demo: string; github: string }) => {
           {!demo ? <AiOutlineEyeInvisible/> : <AiOutlineEye /> }
         </span>
       </Link>
+      <a href="/" target="_blank" rel="noopener noreferrer"></a>
       <Link
         href={github}
         target='_blank'

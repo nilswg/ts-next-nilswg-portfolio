@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslation } from 'next-i18next'
-import Link from 'next/link'
+import { Link } from './Link'
 import { FC, Fragment, ReactNode, createContext, memo, useCallback, useContext, useMemo, useState } from 'react'
 import EnChButton from './EnChButton'
 import SocialLinks from './SocialLinks'
