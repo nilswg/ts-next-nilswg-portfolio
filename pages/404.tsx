@@ -1,7 +1,7 @@
 import { NextPageContext } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Link from 'next/link'
+import { Link } from '../components/Link'
 
 const NotFoundTexts = () => {
   const { t } = useTranslation('common')

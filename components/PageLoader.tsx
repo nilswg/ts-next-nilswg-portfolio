@@ -1,12 +1,14 @@
-import { useLoading } from '@/hooks/useLoading'
-import { memo } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { IoMdRocket } from 'react-icons/io'
 
 const PageLoader = () => {
   /**
    * 檢查是否已經載入完畢。
    */
-  const isLoading = useLoading(false)
+  const [isLoading, setIsLoading] = useState(true)
+  useEffect(() => {
+    setIsLoading(false)
+  }, [])
 
   /**
    * animation-delay: loading 畫面的持續時間。(可根據實際狀況調整)

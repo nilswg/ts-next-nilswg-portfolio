@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from './Link'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 const myLinks = [

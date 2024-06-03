@@ -1,6 +1,6 @@
-import Image from 'next/image'
+import { Image } from './Image'
 import { BiEnvelope, BiMap, BiPhone } from 'react-icons/bi'
-import Hero from 'public/img/self_head.jpg'
+import ResumeSelfHead from 'public/img/self_head.jpg'
 
 type Props = {
   fontStyles: string
@@ -20,11 +20,11 @@ export const ResumeHome: React.FC<Props> = ({
       <div className="flex flex-col items-center">
         <div className="relative h-[100px] w-[100px] rounded-full">
           <Image
-            className="rounded-full object-cover"
-            src={Hero}
-            alt="picture of resume"
-            loading="lazy"
-            fill
+            className="rounded-full object-cover object-center w-full h-full"
+            src={ResumeSelfHead}
+            alt="self image of resume"
+            width={464}
+            height={349}
           />
         </div>
         <h1

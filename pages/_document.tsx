@@ -1,16 +1,7 @@
-import Document, {
-  Head,
-  Html,
-  Main,
-  NextScript,
-  type DocumentContext,
-  type DocumentInitialProps,
-} from 'next/document'
+import Document, { Head, Html, Main, NextScript, type DocumentContext, type DocumentInitialProps } from 'next/document'
 
 class MyDocument extends Document {
-  static async getInitialProps(
-    ctx: DocumentContext
-  ): Promise<DocumentInitialProps> {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const originalRenderPage = ctx.renderPage
 
     // Run the React rendering logic synchronously
@@ -31,8 +22,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
-        <body className='bg-myblack'>
+        <Head>
+          <link rel="canonical" href="https://nilswg-site.vercel.app/" />
+        </Head>
+        <body className="bg-myblack">
           <Main />
           <NextScript />
         </body>

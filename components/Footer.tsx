@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Image } from './Image'
 import NilswgLogo from 'public/nilswg-blue-noblack.svg'
 import SocialLinks from './SocialLinks'
 

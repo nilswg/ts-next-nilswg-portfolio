@@ -1,11 +1,11 @@
 'use client'
 
-import { useTranslation } from 'next-i18next'
-import Link from 'next/link'
+import { useTranslation } from './useI18n'
+import { Link } from './Link'
 import { FC, Fragment, ReactNode, createContext, memo, useCallback, useContext, useMemo, useState } from 'react'
 import EnChButton from './EnChButton'
 import SocialLinks from './SocialLinks'
-import Image from 'next/image'
+import { Image } from './Image'
 import logo from 'public/nilswg-blue-noblack.svg'
 import { HiMenuAlt2, HiOutlineX } from 'react-icons/hi'
 
@@ -97,12 +97,9 @@ Nav.HorizontalItems = memo(() => {
         </HorizontalItem>
       ))}
       <HorizontalItem>
-        <EnChButton
-          className="text-lg"
-          inputProps={{
-            className: `h-[16px] w-[32px] before:h-[16px] before:w-[16px] group-hover:border-sky-500 before:group-hover:bg-sky-500`,
-          }}
-        />
+        <EnChButton className="text-lg">
+          <EnChButton.CheckBox className="h-[16px] w-[32px] before:h-[16px] before:w-[16px]" />
+        </EnChButton>
       </HorizontalItem>
     </ul>
   )
@@ -134,12 +131,9 @@ Nav.VerticalItems = memo(() => {
         </VerticalItem>
       ))}
       <VerticalItem>
-        <EnChButton
-          className="text-3xl"
-          inputProps={{
-            className: `h-[2.5rem] w-[5rem] before:h-[2.5rem] before:w-[2.5rem]`,
-          }}
-        />
+        <EnChButton className="text-3xl">
+          <EnChButton.CheckBox className="h-[2.5rem] w-[5rem] before:h-[2.5rem] before:w-[2.5rem]" />
+        </EnChButton>
       </VerticalItem>
     </ul>
   )
@@ -161,7 +155,7 @@ Nav.SocialLinks = () => {
 }
 
 const HorizontalItem = ({ children }: { children: ReactNode }) => {
-  return <li className="px-4 py-5 hover:rounded hover:bg-gray-800 hover:text-sky-400">{children}</li>
+  return <li className="group px-4 py-5 hover:rounded hover:bg-gray-800 hover:text-sky-400">{children}</li>
 }
 
 const VerticalItem = ({ children }: { children: ReactNode }) => {

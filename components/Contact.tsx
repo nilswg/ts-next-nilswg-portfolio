@@ -1,7 +1,7 @@
 import { getI18nText, getI18nTextArray } from '@/lib/getI18nTranslation'
 import { useContactStore } from '@/stores/contact'
 import { useToastsStore } from '@/stores/toasts'
-import { Trans, useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from './useI18n'
 import { ReactNode, useCallback } from 'react'
 import ContactButton from './ContactButton'
 import ContactTopics from './ContactTopics'

@@ -4,7 +4,7 @@ import { useToastsStore } from '@/stores/toasts'
 import { NextPageContext } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useRouter } from 'next/router'
+import { useI18n } from '../../components/useI18n'
 import { ReactNode, useCallback, useState } from 'react'
 import { BiDownload } from 'react-icons/bi'
 import { CgSpinner } from 'react-icons/cg'
@@ -16,7 +16,7 @@ const Loading = () => (
 )
 
 const DownloadResumeButton = () => {
-  const { locale } = useRouter()
+  const { i18n } = useI18n()
   const [loading, setLoading] = useState(false)
   const addToast = useToastsStore((s) => s.addToast)
 
@@ -28,7 +28,7 @@ const DownloadResumeButton = () => {
     setLoading(true)
 
     const data = await fetch(
-      `/api/resume/download?locale=${locale}&password=${password}`
+      `/api/resume/download?locale=${i18n.language}&password=${password}`
     ).then((resp) => {
       if (resp.status === 200) {
         resp.blob().then((blob) => download(blob, 'resume.pdf'))
