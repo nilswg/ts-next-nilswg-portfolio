@@ -6,7 +6,7 @@ React, Next.js, TypeScript, Tailwind, Sass, Zod, Zustand, Cypress
 
 <br>
 
-## 🚀 <a href="https://nilswg-portfolio.vercel.app/">Demo Website</a>
+## 🚀 <a href="https://nilswg-site.vercel.app/">Demo Website</a>
 click link to see demo.
 
 <br>
